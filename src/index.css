@@ -1,7 +1,9 @@
 :root {
   --base-font-color: #333;
+  --medium-font-color: #878786;
   --light-font-color: #8e8e93;
   --brand-color: #0070c9;
+  --border-color: #efefef;
 }
 
 body {
@@ -13,4 +15,13 @@ body {
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  background-color: transparent;
 }

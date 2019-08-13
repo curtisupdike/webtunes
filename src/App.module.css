@@ -1,0 +1,40 @@
+.app {
+  display: grid;
+  grid-template-areas: 
+    "sidebar player"
+    "sidebar main";
+  grid-template-columns: 200px;
+  grid-template-rows: 60px auto;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar {
+  background: #f0f0f0;
+  border-right: 2px solid var(--border-color);
+  grid-area: sidebar;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  color: var(--medium-font-color);
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 0.75em 0 0.5rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.player {
+  grid-area: player;
+}
+
+.main {
+  grid-area: main;
+}
