@@ -6,7 +6,7 @@ function useAuthorization() {
 
   useEffect(() => {
     const handleChange = () => {
-      setIsAuthorized(isAuthorized);
+      setIsAuthorized(user.isAuthorized);
     }
 
     music.instance.addEventListener('authorizationStatusDidChange', handleChange);
