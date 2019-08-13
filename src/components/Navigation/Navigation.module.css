@@ -1,0 +1,69 @@
+.label {
+  color: #878786;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 16px 0 4px;
+  padding: 0 8px;
+}
+
+.link {
+  color: var(--base-font-color);
+  display: block;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 5px 16px;
+}
+
+.forYou,
+.browse,
+.recentlyAdded,
+.albums,
+.artists,
+.songs,
+.playlist {
+  composes: link;
+}
+
+.active {
+  background-color: #d3d3d3;
+}
+
+.link::before {
+  content: "";
+  background: url('../../assets/icons.png');
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  float: left; 
+  margin: 0 8px 0 0; 
+  background-size: 36px;
+}
+
+.forYou::before {
+  background-position: 0px -432px;
+}
+
+.browse::before {
+  background-position: 0px 0px;
+}
+
+.recentlyAdded::before {
+  background-position: 0px -414px;
+}
+
+.albums::before {
+  background-position: 0px -504px;
+}
+
+.artists::before {
+  background-position: 0px -396px;
+}
+
+.songs::before {
+  background-position: 0px -486px;
+}
+
+.playlist::before {
+  background-position: 0px -108px;
+}
+

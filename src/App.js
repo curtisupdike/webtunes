@@ -1,7 +1,8 @@
 import React from 'react';
-import { Router, Link } from '@reach/router';
+import { Router } from '@reach/router';
 import useAuthorization from './hooks/useAuthorization';
 import LoginButton from './components/LoginButton/LoginButton';
+import Navigation from './components/Navigation/Navigation';
 import Browse from './routes/Browse/Browse';
 import NotFound from './routes/NotFound/NotFound';
 import {
@@ -9,7 +10,6 @@ import {
   sidebar,
   header,
   title,
-  navigation,
   player,
   main
 } from './App.module.css';
@@ -24,9 +24,7 @@ function App() {
           <h1 className={title}>webTunes</h1>
           <LoginButton isAuthorized={isAuthorized} />
         </header>
-        <nav className={navigation}>
-          <Link to="browse">Browse</Link>
-        </nav>
+        <Navigation isAuthorized={isAuthorized} />
       </div>
       <div className={player} />
       <main className={main}>
