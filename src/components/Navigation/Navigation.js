@@ -42,7 +42,9 @@ function NavLink(props) {
 
 function isActive({className}) {
   return function(props) {
-    return props.isCurrent ? { className: className + ' ' + active} : {...className};
+    return props.isCurrent 
+      ? { className: className + ' ' + active} 
+      : { className: className };
   } 
 }  
 
