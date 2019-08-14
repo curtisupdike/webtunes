@@ -1,9 +1,11 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { Router, Redirect } from '@reach/router';
 import useAuthorization from './hooks/useAuthorization';
 import LoginButton from './components/LoginButton/LoginButton';
+import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
 import Browse from './routes/Browse/Browse';
+import Search from './routes/Search/Search';
 import NotFound from './routes/NotFound/NotFound';
 import {
   app,
@@ -24,13 +26,15 @@ function App() {
           <h1 className={title}>webTunes</h1>
           <LoginButton isAuthorized={isAuthorized} />
         </header>
+        <SearchBar />
         <Navigation isAuthorized={isAuthorized} />
       </div>
       <div className={player} />
       <main className={main}>
         <Router>
-          <Browse path="/" />
+          <Redirect noThrow from="/" to="browse" />
           <Browse path="browse" />
+          <Search path="search/:query" />
           <NotFound default />
         </Router>
       </main>
