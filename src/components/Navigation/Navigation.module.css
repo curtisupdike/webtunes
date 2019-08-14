@@ -25,7 +25,8 @@
 }
 
 .active {
-  background-color: #d3d3d3;
+  background-color: var(--brand-color);
+  color: #fff;
 }
 
 .link::before {
@@ -43,27 +44,54 @@
   background-position: 0px -432px;
 }
 
+.forYou.active::before {
+  background-position: -18px -432px;
+}
+
 .browse::before {
   background-position: 0px 0px;
+}
+
+.browse.active::before {
+  background-position: -18px 0px;
 }
 
 .recentlyAdded::before {
   background-position: 0px -414px;
 }
 
+.recentlyAdded.active::before {
+  background-position: -18px -414px;
+}
+
 .albums::before {
   background-position: 0px -504px;
+}
+
+.albums.active::before {
+  background-position: -18px -504px;
 }
 
 .artists::before {
   background-position: 0px -396px;
 }
 
+.artists.active::before {
+  background-position: -18px -396px;
+}
+
 .songs::before {
   background-position: 0px -486px;
+}
+
+.songs.active::before {
+  background-position: -18px -486px;
 }
 
 .playlist::before {
   background-position: 0px -108px;
 }
 
+.playlist.active::before {
+  background-position: -18px -108px;
+}
