@@ -1,0 +1,30 @@
+.track {
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--light-font-color);
+  display: flex;
+  font-size: 13px;
+  font-weight: 400;
+  height: 50px;
+}
+
+.trackNumber {
+  display: flex;
+  justify-content: center;
+  width: 32px;
+}
+
+.name {
+  flex: 1;
+  font-size: 13px;
+  box-sizing: border-box;
+  color: var(--base-font-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.duration {
+  padding-left: 28px;
+}

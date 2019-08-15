@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
 import Browse from './routes/Browse/Browse';
 import Search from './routes/Search/Search';
+import Album from './routes/Album/Album';
 import NotFound from './routes/NotFound/NotFound';
 import {
   app,
@@ -35,6 +36,7 @@ function App() {
           <Redirect noThrow from="/" to="browse" />
           <Browse path="browse" />
           <Search path="search/:query" />
+          <Album path="album/:id" />
           <NotFound default />
         </Router>
       </main>

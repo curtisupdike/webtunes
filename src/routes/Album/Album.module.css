@@ -1,0 +1,74 @@
+.album {
+  display: flex;
+}
+
+.left {
+  margin: 42px 0 42px 42px;
+  width: 322px;
+}
+
+.artwork {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+}
+
+.details {
+  border-bottom: 1px solid #e5e5e5;
+  color: #8e8e93;
+  font-size: 13px;
+  margin: 0 4px;
+  padding: 10px 0;
+}
+
+.notes h3 {
+  color: #333;
+  font-size: 16px;
+  margin: 20px 0 0;
+}
+
+.notes p {
+  color: #333;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.right {
+  margin: 42px;
+  min-width: 373px;
+  max-width: 624px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 6px 0 2px;
+  padding: 0;
+}
+
+.artist {
+  color: var(--brand-color);
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.genre {
+  color: #8e8e93;
+  font-size: 13px;
+  margin: 4px 0 24px 0;
+}
+
+.tracklist {
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.copyright {
+  margin-bottom: 15px;
+}
+
+.copyright p {
+  color: #8e8e93;
+  font-size: 13px;
+  margin: 2px 0;
+}
