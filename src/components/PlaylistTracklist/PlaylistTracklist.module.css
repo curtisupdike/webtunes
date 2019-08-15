@@ -1,26 +1,46 @@
 .tracklist {
-  border-top: 1px solid var(--border-color);
   margin-bottom: 15px;
+  padding-left: 60px;
 }
 
 .track {
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
   color: var(--light-font-color);
   display: flex;
   font-size: 13px;
   font-weight: 400;
-  height: 50px;
+  height: 55px;
+  position: relative;
 }
 
-.trackNumber {
+.album {
+  position: absolute;
+  height: 45px;
+  left: -60px;
+  width: 45px;
+}
+
+.artwork {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.text {
+  align-items: center;
   display: flex;
-  justify-content: center;
-  width: 32px;
+  width: 100%;
+}
+
+.info {
+  flex: 1;
+}
+
+.info p {
+  margin: 0;
 }
 
 .name {
-  flex: 1;
   font-size: 13px;
   box-sizing: border-box;
   color: var(--base-font-color);
@@ -31,5 +51,6 @@
 }
 
 .duration {
+  align-self: center;
   padding-left: 28px;
 }

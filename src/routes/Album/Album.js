@@ -47,9 +47,7 @@ function Album({id}) {
         <h1 className={styles.name}>{name}</h1>
         <h2 className={styles.artist}>{artistName}</h2>
         <p className={styles.genre}>{genreNames[0]}</p>
-        <div className={styles.tracklist}>
-          { tracks && <AlbumTracklist tracks={tracks} /> }
-        </div>
+        { tracks && <AlbumTracklist tracks={tracks} /> }
         <div className={styles.copyright}>
           <p><strong>Released:</strong>  {releaseDate}</p>
           <p>{copyright}</p>

@@ -3,11 +3,15 @@ import { formatTrackDuration } from '../../utils/utils';
 import styles from './AlbumTracklist.module.css';
 
 function AlbumTracklist({tracks}) {
-  return tracks.map((item, key) => {
-    return (
-      <AlbumTrack key={key} {...item.attributes} />
-    );
-  });
+  return (
+    <div className={styles.tracklist}>
+      {tracks.map((item, key) => {
+        return (
+          <AlbumTrack key={key} {...item.attributes} />
+        );
+      })}
+    </div>
+  );
 }
 
 function AlbumTrack({trackNumber, name, durationInMillis}) {

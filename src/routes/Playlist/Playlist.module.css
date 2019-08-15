@@ -1,4 +1,4 @@
-.album {
+.playlist {
   display: flex;
   justify-content: center;
   margin: 22px;
@@ -22,14 +22,14 @@
   padding: 10px 0;
 }
 
-.notes h3 {
-  color: var(base-font-color);
+.description h3 {
+  color: var(--base-font-color);
   font-size: 16px;
-  margin: 20px 0 0;
+  margin: 22px 0 0;
 }
 
-.notes p {
-  color: var(base-font-color);
+.description p {
+  color: var(--base-font-color);
   font-size: 13px;
   margin-top: 6px;
 }
@@ -48,25 +48,9 @@
   padding: 0;
 }
 
-.artist {
+.curator {
   color: var(--brand-color);
   font-size: 18px;
   font-weight: 400;
-  margin: 0;
-}
-
-.genre {
-  color: var(--light-font-color);
-  font-size: 13px;
-  margin: 4px 0 24px 0;
-}
-
-.copyright {
-  margin-bottom: 15px;
-}
-
-.copyright p {
-  color: var(--light-font-color);
-  font-size: 13px;
-  margin: 2px 0;
+  margin: 0 0 24px 0;
 }
