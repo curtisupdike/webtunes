@@ -1,0 +1,10 @@
+.container {
+  margin-top: 40vh;
+  text-align: center;
+}
+
+.message {
+  color: var(--light-font-color);
+  font-size: 24px;
+  font-weight: 300;
+}
