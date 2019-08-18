@@ -7,6 +7,7 @@ import Navigation from './components/Navigation/Navigation';
 import Browse from './routes/Browse/Browse';
 import Search from './routes/Search/Search';
 import Album from './routes/Album/Album';
+import Artist from './routes/Artist/Artist';
 import Playlist from './routes/Playlist/Playlist';
 import NotFound from './routes/NotFound/NotFound';
 import {
@@ -38,6 +39,7 @@ function App() {
           <Browse path="browse" />
           <Search path="search/:query" />
           <Album path="album/:id" />
+          <Artist path="artist/:id" />
           <Playlist path="playlist/:id" />
           <NotFound default />
         </Router>

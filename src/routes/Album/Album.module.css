@@ -54,6 +54,11 @@
   font-size: 18px;
   font-weight: 400;
   margin: 0;
+  text-decoration: none;
+}
+
+.artist:hover {
+  text-decoration: underline;
 }
 
 .genre {

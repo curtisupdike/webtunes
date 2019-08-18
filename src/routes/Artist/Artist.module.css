@@ -1,0 +1,17 @@
+.name {
+  border-bottom: 1px solid var(--border-color);
+  margin: 36px 48px;
+  padding-bottom: 12px;
+}
+
+.artists {
+  margin: 0 48px;
+}
+
+.artists {
+  justify-items: center;
+  display: grid;
+  grid-row-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  margin: 0 2rem;
+}

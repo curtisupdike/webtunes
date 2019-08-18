@@ -2,6 +2,9 @@ const music = {
   get instance() {
     return window.MusicKit.getInstance();
   },
+  get api() {
+    return window.MusicKit.getInstance().api;
+  }
 };
 
 const user = {

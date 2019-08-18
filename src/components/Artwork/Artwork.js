@@ -9,8 +9,8 @@ function Artwork({artwork, name, size, className}) {
       className={className} 
       src={artworkURL}
       alt={name + ' artwork'}
-      width={size} 
-      height={size} 
+      height={size}
+      width={size}
     />
   );
 } 
