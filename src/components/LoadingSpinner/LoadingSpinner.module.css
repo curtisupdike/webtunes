@@ -1,0 +1,32 @@
+@-webkit-keyframes spin {
+  to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg)
+  }
+}
+
+@keyframes spin {
+  to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg)
+  }
+}
+
+.container {
+  margin-top: 40vh;
+}
+
+.spinner {
+  margin: 0 auto;
+  height: 35px;
+  width: 35px;
+  background-image: url("../../assets/loading.svg");
+  -webkit-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: steps(12, end);
+  animation-timing-function: steps(12, end)
+}

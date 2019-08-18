@@ -3,6 +3,7 @@ import { music } from '../../services/music';
 import Artwork from '../../components/Artwork/Artwork';
 import PlaylistTracklist from '../../components/PlaylistTracklist/PlaylistTracklist';
 import styles from './Playlist.module.css';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 function Playlist({id}) {
   const [playlist, setPlaylist] = useState(null);
@@ -24,7 +25,7 @@ function Playlist({id}) {
   } = {...playlist};
 
 
-  return playlist && (
+  return playlist ? (
     <div className={styles.playlist}>
       <div className={styles.left}>
         <Artwork
@@ -47,6 +48,8 @@ function Playlist({id}) {
         { tracks && <PlaylistTracklist tracks={tracks} /> }
       </div>
     </div>
+  ) : (
+    <LoadingSpinner />
   );
 }
 

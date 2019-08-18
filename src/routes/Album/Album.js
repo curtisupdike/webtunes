@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 import { music } from '../../services/music';
+import styles from './Album.module.css';
 import Artwork from '../../components/Artwork/Artwork';
 import AlbumTracklist from '../../components/AlbumTracklist/AlbumTracklist';
-import styles from './Album.module.css';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 function Album({id}) {
   const [album, setAlbum] = useState(null);
@@ -14,7 +15,7 @@ function Album({id}) {
     })
   }, [id]);
 
-  return album && (
+  return album ? (
     <div className={styles.album}>
       <div className={styles.left}>
         <Artwork
@@ -47,6 +48,8 @@ function Album({id}) {
         </div>
       </div>
     </div>
+  ) : (
+    <LoadingSpinner />
   );
 }
 
