@@ -36,6 +36,9 @@
 }
 
 .main {
+  box-sizing: border-box;
   grid-area: main;
+  height: 100%;
+  padding: 24px 0;
   overflow: scroll;
 }

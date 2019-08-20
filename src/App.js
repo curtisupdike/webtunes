@@ -9,7 +9,7 @@ import Search from './routes/Search/Search';
 import Album from './routes/Album/Album';
 import Artist from './routes/Artist/Artist';
 import Playlist from './routes/Playlist/Playlist';
-import NotFound from './routes/NotFound/NotFound';
+import NotFound from './components/NotFound/NotFound';
 import {
   app,
   sidebar,
