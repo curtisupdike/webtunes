@@ -1,7 +1,7 @@
 .playlist {
   display: flex;
   justify-content: center;
-  margin: 22px;
+  margin: 0 22px;
   min-width: 830px;
 }
 
