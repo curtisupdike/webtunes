@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react';
 import styles from './PlaylistCollection.module.css';
-import PlaylistItem from '../PlaylistItem/PlaylistItem';
+import ItemPreview from '../ItemPreview/ItemPreview';
 
 function PlaylistCollection({data}) {
   return (
     <Fragment>
       <div className={styles.collection}>
         {data.map(item => (
-          <PlaylistItem 
+          <ItemPreview
             key={item.id}
-            id={item.id}
-            name={item.attributes.name} 
-            curatorName={item.attributes.curatorName} 
             artwork={item.attributes.artwork}
+            artworkLink={`/playlist/${item.id}`}
+            name={item.attributes.name}
+            description={item.attributes.curatorName}
           />
         ))}
       </div>

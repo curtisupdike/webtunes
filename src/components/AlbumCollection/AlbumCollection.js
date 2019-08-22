@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react';
 import styles from './AlbumCollection.module.css';
-import AlbumItem from '../AlbumItem/AlbumItem';
+import ItemPreview from '../ItemPreview/ItemPreview';
 
-function AlbumCollection({title, data}) {
+function AlbumCollection({data}) {
   return (
     <Fragment>
       <div className={styles.collection}>
         {data.map(item => (
-          <AlbumItem 
+          <ItemPreview 
             key={item.id}
-            id={item.id}
-            name={item.attributes.name} 
-            artistName={item.attributes.artistName} 
             artwork={item.attributes.artwork}
+            artworkLink={`/album/${item.id}`}
+            name={item.attributes.name} 
+            description={item.attributes.artistName} 
           />
         ))}
       </div>

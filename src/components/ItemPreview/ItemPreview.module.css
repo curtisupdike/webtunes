@@ -27,7 +27,7 @@
   padding-top: 8px;
 }
 
-.artistName {
+.description {
   composes: text;
   color: var(--light-font-color);
   padding-bottom: 10px;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import styles from './AlbumItem.module.css';
+import styles from './ItemPreview.module.css';
 import Artwork from '../Artwork/Artwork';
 
-function AlbumItem({id, name, artistName, artwork}) {
+function ItemPreview({artwork, artworkLink, name, description}) {
   return(
     <div>
       <div className={styles.play}>
-        <Link to={`/album/${id}`} className={styles.link}>
+        <Link to={artworkLink} className={styles.link}>
           <Artwork 
             artwork={artwork}
             name={name}
@@ -17,9 +17,9 @@ function AlbumItem({id, name, artistName, artwork}) {
         </Link>
       </div>
       <p className={styles.name}>{name}</p>
-      <p className={styles.artistName}>{artistName}</p>
+      <p className={styles.description}>{description}</p>
     </div>
   );
 }
 
-export default AlbumItem;
+export default ItemPreview;
