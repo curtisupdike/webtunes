@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatTrackDuration } from '../../utils/utils';
+import { formatMediaTime } from '../../utils/utils';
 import Artwork from '../Artwork/Artwork';
 import styles from './SongCollection.module.css';
 
@@ -43,7 +43,7 @@ function SongItem(props) {
           <p className={styles.name}>{name}</p>
           <p className={styles.artistName}>{artistName}</p>
         </div>
-        <p className={styles.duration}>{formatTrackDuration(durationInMillis)}</p>
+        <p className={styles.duration}>{formatMediaTime(durationInMillis)}</p>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatTrackDuration } from '../../utils/utils';
+import { formatMediaTime } from '../../utils/utils';
 import styles from './AlbumTracklist.module.css';
 
 function AlbumTracklist({tracks}) {
@@ -21,7 +21,7 @@ function AlbumTrack({trackNumber, name, durationInMillis}) {
         <p>{trackNumber}</p>
       </div>
       <p className={styles.name}>{name}</p>
-      <p className={styles.duration}>{formatTrackDuration(durationInMillis)}</p>
+      <p className={styles.duration}>{formatMediaTime(durationInMillis)}</p>
     </div>
   );
 }

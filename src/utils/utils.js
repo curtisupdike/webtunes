@@ -2,8 +2,7 @@ export function formatArtworkURL(artwork, size) {
   return window.MusicKit.formatArtworkURL(artwork, size, size);
 }
 
-export function formatTrackDuration(millis) {
-  var minutes = Math.floor(millis / 60000);
-  var seconds = ((millis % 60000) / 1000).toFixed(0);
-  return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+export function formatMediaTime(millis) {
+  const seconds = millis / 1000;
+  return window.MusicKit.formatMediaTime(seconds, ':');
 }
