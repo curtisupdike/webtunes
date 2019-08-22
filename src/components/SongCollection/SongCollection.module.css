@@ -1,0 +1,63 @@
+.collection {
+  display: grid;
+  grid-auto-flow: column;  
+  overflow: scroll;
+  padding: 16px 0 24px 48px;
+  grid-column-gap: 48px;
+  grid-row-gap: 10px;
+  grid-template-rows: repeat(4, 50px); 
+}
+
+/* hack for padding with overflow */
+.collection > *:last-child {
+  padding-right: 48px;
+}
+
+.track {
+  align-items: center;
+  color: var(--light-font-color);
+  display: flex;
+  font-size: 13px;
+  font-weight: 400;
+  height: 55px;
+  position: relative;
+  width: 270px;
+}
+
+.album {
+  height: 45px;
+  width: 45px;
+}
+
+.artwork {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.text {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+  width: 170px;
+}
+
+.info p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.name {
+  color: var(--base-font-color);
+}
+
+.duration {
+  align-self: center;
+  padding-left: 12px;
+}

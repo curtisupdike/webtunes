@@ -2,6 +2,7 @@ import React, {Fragment, useState, useEffect } from 'react';
 import { music } from '../../services/music';
 import styles from './Search.module.css';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import SongCollection from '../../components/SongCollection/SongCollection';
 import ArtistCollection from './ArtistCollection/ArtistCollection';
 import AlbumCollection from '../../components/AlbumCollection/AlbumCollection';
 import PlaylistCollection from '../../components/PlaylistCollection/PlaylistCollection';
@@ -20,6 +21,8 @@ function Search({query}) {
   return search ? (
     <Fragment>
       <h1 className={styles.title}>Search</h1>
+      <h2 className={styles.heading}>Songs</h2>
+      {search.songs ? <SongCollection data={search.songs.data} /> : <NotFound />}
       <h2 className={styles.heading}>Artists</h2>
       {search.artists ? <ArtistCollection data={search.artists.data} /> : <NotFound />}
       <h2 className={styles.heading}>Album</h2>

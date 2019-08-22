@@ -2,6 +2,7 @@
   display: grid;
   grid-auto-flow: column;  
   grid-column-gap: 30px;
+  grid-template-columns: 164px;
   overflow: scroll;
   padding: 16px 0 24px 48px;
 }
