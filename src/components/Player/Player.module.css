@@ -2,31 +2,46 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   display: grid;
-  grid-template-areas: "now controls .";
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "nowPlaying controls .";
+  grid-template-columns: repeat(3, 33%);
   grid-area: player;
   justify-content: center;
+}
+
+.nowPlaying {
+  align-items: center;
+  display: flex;
+  grid-area: nowPlaying;
+}
+
+.artwork {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.text {
+  width: 100%;
+}
+
+.text p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: 15px;
+}
+
+.albumInfo {
+  color: var(--light-font-color);
+  font-size: 12px;
 }
 
 .controls {
   display: flex;
   grid-area: controls;
   justify-content: center;
-}
-
-.button {
-  height: 35px;
-  width: 35px;
-}
-
-.button svg path {
-  fill: #6d6d6d;
-}
-
-.button:disabled svg path {
-  fill: #a4a4a4;
-}
-
-.button:nth-child(n + 1) {
-  margin: 0 0.5rem;
 }

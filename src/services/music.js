@@ -29,6 +29,10 @@ const player = {
     return music.player.isReady;
   },
 
+  get nowPlayingItem() {
+    return music.player.nowPlayingItem;
+  },
+
   playSelection(id, kind) {
     if (music.player.isPlaying) music.player.stop();
     music.instance.setQueue({

@@ -14,8 +14,7 @@ function Search({query}) {
   useEffect(() => {
     music.api.search(query, {limit: 16}).then(res =>{
       setSearch(res);
-      console.log(res);
-    }).catch(err => console.log(err));
+    }).catch(err => console.error(err));
   }, [query]);
 
   return search ? (
