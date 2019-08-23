@@ -14,6 +14,7 @@ function SongCollection({data}) {
           name={item.attributes.name}
           artistName={item.attributes.artistName}
           durationInMillis={item.attributes.durationInMillis}
+          playParams={item.attributes.playParams}
         />
       ))}
     </div>
