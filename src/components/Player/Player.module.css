@@ -1,0 +1,32 @@
+.player {
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  display: grid;
+  grid-template-areas: "now controls .";
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: player;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  grid-area: controls;
+  justify-content: center;
+}
+
+.button {
+  height: 35px;
+  width: 35px;
+}
+
+.button svg path {
+  fill: #6d6d6d;
+}
+
+.button:disabled svg path {
+  fill: #a4a4a4;
+}
+
+.button:nth-child(n + 1) {
+  margin: 0 0.5rem;
+}

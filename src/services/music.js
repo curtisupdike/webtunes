@@ -25,11 +25,31 @@ const user = {
 };
 
 const player = {
+  get isReady() {
+    return music.player.isReady;
+  },
+
   playSelection(id, kind) {
     if (music.player.isPlaying) music.player.stop();
     music.instance.setQueue({
       [kind]: id,
     }).then(() => music.player.play());
+  },
+
+  play() {
+    music.player.play();
+  },
+
+  pause() {
+    music.player.pause();
+  },
+
+  skipToNextItem() {
+    music.player.skipToNextItem();
+  },
+
+  skipToPreviousItem() {
+    music.player.skipToPreviousItem();
   },
 };
 

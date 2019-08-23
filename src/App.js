@@ -18,6 +18,7 @@ import {
   player,
   main
 } from './App.module.css';
+import Player from './components/Player/Player';
 
 function App() {
   const isAuthorized = useAuthorization();
@@ -32,7 +33,7 @@ function App() {
         <SearchBar />
         <Navigation isAuthorized={isAuthorized} />
       </div>
-      <div className={player} />
+      <Player />
       <main className={main}>
         <Router>
           <Redirect noThrow from="/" to="browse" />
