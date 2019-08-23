@@ -15,8 +15,24 @@
 
 .trackNumber {
   display: flex;
+  position: relative;
   justify-content: center;
-  width: 32px;
+  width: 36px;
+}
+
+.track:hover .playButton {
+  opacity: 100;
+}
+
+.playButton {
+  position: absolute;
+  left: 1px;
+  bottom: 4px;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+  width: 34px;
+  height: 34px;
 }
 
 .name {

@@ -26,6 +26,21 @@
   border-radius: 4px;
 }
 
+.track:hover .playButton {
+  opacity: 100;
+}
+
+.playButton {
+  position: absolute;
+  left: 5px;
+  bottom: 4px;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+  width: 36px;
+  height: 36px;
+}
+
 .text {
   align-items: center;
   display: flex;

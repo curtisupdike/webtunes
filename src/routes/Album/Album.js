@@ -5,6 +5,7 @@ import styles from './Album.module.css';
 import Artwork from '../../components/Artwork/Artwork';
 import AlbumTracklist from '../../components/AlbumTracklist/AlbumTracklist';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import PlayButton from '../../components/PlayButton/PlayButton';
 
 function Album({id}) {
   const [album, setAlbum] = useState(null);
@@ -24,7 +25,10 @@ function Album({id}) {
           name={album.attributes.name} 
           size="320"
         />
-        <p className={styles.details}>{album.attributes.trackCount} Songs</p>
+        <div className={styles.info}>
+          <p className={styles.trackCount}>{album.attributes.trackCount} Songs</p>
+          <PlayButton className={styles.playButton} {...album.attributes.playParams} />
+        </div>
         { album.attributes.editorialNotes &&
           <div className={styles.notes}>
             <h3>Editors' Notes</h3>

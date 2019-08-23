@@ -2,6 +2,7 @@ import React from 'react';
 import { formatMediaTime } from '../../utils/utils';
 import Artwork from '../Artwork/Artwork';
 import styles from './PlaylistTracklist.module.css';
+import PlayButton from '../PlayButton/PlayButton';
 
 function PlaylistTracklist({tracks}) {
   return (
@@ -21,7 +22,8 @@ function PlaylistTrack(props) {
     albumName,
     artwork,
     name, 
-    durationInMillis
+    durationInMillis,
+    playParams
   } = props;
 
   return (
@@ -33,6 +35,7 @@ function PlaylistTrack(props) {
           size={45}
           className={styles.artwork}
         />
+        <PlayButton className={styles.playButton} {...playParams} />
       </div>
       <div className={styles.text}>
         <div className={styles.info}>

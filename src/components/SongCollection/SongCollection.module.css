@@ -2,9 +2,9 @@
   display: grid;
   grid-auto-flow: column;  
   overflow: scroll;
-  padding: 16px 0 24px 48px;
+  padding: 15px 0 24px 48px;
   grid-column-gap: 48px;
-  grid-row-gap: 10px;
+  grid-row-gap: 5px;
   grid-template-rows: repeat(4, 50px); 
 }
 
@@ -26,12 +26,28 @@
 
 .album {
   height: 45px;
+  position: relative;
   width: 45px;
 }
 
 .artwork {
   border: 1px solid var(--border-color);
   border-radius: 4px;
+}
+
+.track:hover .playButton {
+  opacity: 100;
+}
+
+.playButton {
+  position: absolute;
+  left: 5px;
+  bottom: 4px;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+  width: 36px;
+  height: 36px;
 }
 
 .text {

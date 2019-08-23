@@ -13,6 +13,7 @@ function AlbumCollection({data}) {
             artworkLink={`/album/${item.id}`}
             name={item.attributes.name} 
             description={item.attributes.artistName} 
+            playParams={item.attributes.playParams}
           />
         ))}
       </div>

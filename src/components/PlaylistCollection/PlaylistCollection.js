@@ -13,6 +13,7 @@ function PlaylistCollection({data}) {
             artworkLink={`/playlist/${item.id}`}
             name={item.attributes.name}
             description={item.attributes.curatorName}
+            playParams={item.attributes.playParams}
           />
         ))}
       </div>

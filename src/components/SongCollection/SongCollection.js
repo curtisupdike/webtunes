@@ -2,6 +2,7 @@ import React from 'react';
 import { formatMediaTime } from '../../utils/utils';
 import Artwork from '../Artwork/Artwork';
 import styles from './SongCollection.module.css';
+import PlayButton from '../PlayButton/PlayButton';
 
 function SongCollection({data}) {
   return (
@@ -20,15 +21,8 @@ function SongCollection({data}) {
 }
 
 
-function SongItem(props) {
-  const { 
-    artistName,
-    artwork, 
-    durationInMillis,
-    name,
-  } = {...props};
-
-  return(
+function SongItem({artistName, artwork, durationInMillis, name, playParams}) {
+  return (
     <div className={styles.track}>
       <div className={styles.album}>
         <Artwork
@@ -37,6 +31,7 @@ function SongItem(props) {
           size="45"
           className={styles.artwork}
         />
+        <PlayButton className={styles.playButton} {...playParams} />
       </div>
       <div className={styles.text}>
         <div className={styles.info}>

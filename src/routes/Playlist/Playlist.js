@@ -4,6 +4,7 @@ import Artwork from '../../components/Artwork/Artwork';
 import PlaylistTracklist from '../../components/PlaylistTracklist/PlaylistTracklist';
 import styles from './Playlist.module.css';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import PlayButton from '../../components/PlayButton/PlayButton';
 
 function Playlist({id}) {
   const [playlist, setPlaylist] = useState(null);
@@ -13,7 +14,6 @@ function Playlist({id}) {
     music.instance.api.playlist(id).then(res => {
       setPlaylist(res.attributes);
       setTracks(res.relationships.tracks.data);
-      console.log(res.relationships.tracks.data);
     })
   }, [id]);
 
@@ -22,6 +22,7 @@ function Playlist({id}) {
     curatorName,
     description,
     name,
+    playParams
   } = {...playlist};
 
 
@@ -34,7 +35,10 @@ function Playlist({id}) {
           name={name} 
           size="320"
         />
-        <p className={styles.details}>{tracks && tracks.length} Songs</p>
+        <div className={styles.info}>
+          <p className={styles.trackCount}>{tracks && tracks.length} Songs</p>
+          <PlayButton className={styles.playButton} {...playParams} />
+        </div>
         { description &&
           <div className={styles.description}>
             <h3>Editors' Notes</h3>

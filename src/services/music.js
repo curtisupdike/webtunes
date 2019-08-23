@@ -4,6 +4,9 @@ const music = {
   },
   get api() {
     return window.MusicKit.getInstance().api;
+  },
+  get player() {
+    return window.MusicKit.getInstance().player;
   }
 };
 
@@ -21,7 +24,17 @@ const user = {
   },
 };
 
+const player = {
+  playSelection(id, kind) {
+    if (music.player.isPlaying) music.player.stop();
+    music.instance.setQueue({
+      [kind]: id,
+    }).then(() => music.player.play());
+  },
+};
+
 export {
   music,
   user,
+  player
 };

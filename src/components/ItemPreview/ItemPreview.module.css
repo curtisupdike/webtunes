@@ -1,5 +1,6 @@
-.play {
+.item {
   height: 162px;
+  position: relative;
   width: 162px;
   
 }
@@ -9,6 +10,21 @@
   border-radius: 5px;
   width: 162px;
   height: 162px;
+}
+
+.item:hover .playButton {
+  opacity: 100;
+}
+
+.playButton {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+  width: 35px;
+  height: 35px;
 }
 
 .text {

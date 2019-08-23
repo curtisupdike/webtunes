@@ -15,12 +15,32 @@
   border-radius: 6px;
 }
 
-.details {
+.info {
   border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4px;
+}
+
+.trackCount {
   color: var(--light-font-color);
   font-size: 13px;
-  margin: 0 4px;
-  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.playButton {
+  height: 32px;
+  position: relative;
+  width: 32px;
+}
+
+.playButton::before {
+  color: var(--brand-color);
+  content: 'Play';
+  position: absolute;
+  font-size: 13px;
+  right: 30px;
+  top: 9px;
 }
 
 .description h3 {
