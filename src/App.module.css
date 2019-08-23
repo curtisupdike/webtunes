@@ -30,11 +30,6 @@
   padding: 0;
 }
 
-.player {
-  border-bottom: 1px solid var(--border-color);
-  grid-area: player;
-}
-
 .main {
   box-sizing: border-box;
   grid-area: main;

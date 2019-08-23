@@ -15,7 +15,6 @@ import {
   sidebar,
   header,
   title,
-  player,
   main
 } from './App.module.css';
 import Player from './components/Player/Player';

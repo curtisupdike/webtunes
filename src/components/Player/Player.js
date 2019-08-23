@@ -5,24 +5,24 @@ import { music, player } from '../../services/music';
 function Player() {
   return (
     <div className={styles.player}>
-      <PlayerControls />
+      <Controls />
     </div>
   );
 }
 
-function PlayerControls() {
+function Controls() {
   const [isReady, setIsReady] = useState(null);
   useEffect(() => {
-    const handleChange = () => setIsReady(player.isReady)
+    const handleChange = () => setIsReady(player.isReady);
     music.instance.addEventListener('mediaCanPlay', handleChange);
     return () => music.instance.removeEventListener('mediaCanPlay', handleChange);
   });
 
   const [isPlaying, setIsPlaying] = useState(null);
   useEffect(() => {
-    const handleChange = () => setIsPlaying(player.isPlaying);
-    music.instance.addEventListener('playbackStateDidChange', handleChange);
-    return () => music.instance.removeEventListener('playbackStateDidChange', handleChange);
+    const handleChange = () => setIsPlaying(music.player.isPlaying);
+    music.player.addEventListener('playbackStateDidChange', handleChange);
+    return () => music.player.removeEventListener('playbackStateDidChange', handleChange);
   });
 
   return (
@@ -37,7 +37,6 @@ function PlayerControls() {
           <svg height="100%" width="100%" viewBox="0 0 60 60">
             <path fill="#262324" d="M14.06,29.59c0-5.5,0-11,0-16.48C14,8.28,17.14,8,20.8,8s7.29-.26,7.28,5c0,11.32,0,22.64,0,34,0,4.83-3.09,5.14-6.75,5.08s-7.3.26-7.28-5C14.06,41.24,14.06,35.41,14.06,29.59Z" transform="translate(0 0)"/><path fill="#262324"  d="M46.06,30.29c0,5.5-.09,11,0,16.48.11,5.16-3.19,5.34-7,5.34s-7.1-.13-7-5.3q.15-16.74,0-33.46C32,8.19,35.25,8,39.06,8s7.15.13,7,5.3C46,19,46.06,24.63,46.06,30.29Z" transform="translate(0 0)"/>
           </svg>
-
         </button>
       ) : (
         <button className={styles.button} disabled={!isReady} onClick={player.play} aria-label="play">
