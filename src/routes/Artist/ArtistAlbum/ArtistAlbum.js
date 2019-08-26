@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { music } from '../../../services/music';
-import AlbumItem from '../../../components/AlbumItem/AlbumItem';
+import ItemPreview from '../../../components/ItemPreview/ItemPreview';
 
 function ArtistAlbum({id}) {
   const [album, setAlbum] = useState(null);
@@ -12,11 +12,13 @@ function ArtistAlbum({id}) {
   }, [id]);
 
   return album && (
-    <AlbumItem
+    <ItemPreview
       id={id}
-      artistName={album.releaseDate.substring(0, 4)}
       artwork={album.artwork}
+      artworkLink={`/album/${id}`}
+      description={album.releaseDate.substring(0, 4)}
       name={album.name}
+      playParams={album.playParams}
     />
   );
 }

@@ -1,8 +1,12 @@
 .item {
-  height: 162px;
+  height: 164px;
   position: relative;
-  width: 162px;
+  width: 164px;
   
+}
+
+.link {
+  position: absolute;
 }
 
 .artwork {
