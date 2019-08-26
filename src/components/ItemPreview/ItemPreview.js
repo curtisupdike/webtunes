@@ -5,11 +5,11 @@ import styles from './ItemPreview.module.css';
 import Artwork from '../Artwork/Artwork';
 import PlayButton from '../PlayButton/PlayButton';
 
-function ItemPreview({id, artwork, artworkLink, name, description, playParams, type}) {
+function ItemPreview({artwork, artworkLink, name, description, playParams, album}) {
   const [artistLink, setArtistLink] = useState(null);  
   useEffect(() => {
-    if (type === 'album') {
-      music.instance.api.album(id).then(res => {
+    if (album) {
+      music.instance.api.album(album).then(res => {
         if (res.relationships.artists.data[0]) {
           setArtistLink(`/artist/${res.relationships.artists.data[0].id}`);
         }

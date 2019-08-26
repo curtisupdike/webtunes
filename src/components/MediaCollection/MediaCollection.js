@@ -6,27 +6,21 @@ function MediaCollection({data}) {
   return (
     <Fragment>
       <div className={styles.collection}>
-        {data.map(item => item.type === 'albums' ? (
+        {data.map(item => (
           <ItemPreview 
             key={item.id}
-            id={item.id}
             artwork={item.attributes.artwork}
             artworkLink={`/album/${item.id}`}
             name={item.attributes.name} 
-            description={item.attributes.artistName} 
+            description={item.type === 'albums'
+              ? item.attributes.artistName
+              : item.attributes.curatorName
+            } 
             playParams={item.attributes.playParams}
-            type="album"
-          />
-        ) : (
-          <ItemPreview
-            key={item.id}
-            id={item.id}
-            artwork={item.attributes.artwork}
-            artworkLink={`/playlist/${item.id}`}
-            name={item.attributes.name} 
-            description={item.attributes.curatorName}
-            playParams={item.attributes.playParams}
-            type="playlist"
+            album={item.type === 'albums'
+             ? item.id
+             : null
+            }
           />
         ))}
       </div>
