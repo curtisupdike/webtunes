@@ -4,8 +4,7 @@ import styles from './Search.module.css';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import SongCollection from '../../components/SongCollection/SongCollection';
 import ArtistCollection from './ArtistCollection/ArtistCollection';
-import AlbumCollection from '../../components/AlbumCollection/AlbumCollection';
-import PlaylistCollection from '../../components/PlaylistCollection/PlaylistCollection';
+import MediaCollection from '../../components/MediaCollection/MediaCollection';
 import NotFound from '../../components/NotFound/NotFound';
 
 function Search({query}) {
@@ -25,9 +24,9 @@ function Search({query}) {
       <h2 className={styles.heading}>Artists</h2>
       {search.artists ? <ArtistCollection data={search.artists.data} /> : <NotFound />}
       <h2 className={styles.heading}>Album</h2>
-      { search.albums ? <AlbumCollection data={search.albums.data} /> : <NotFound /> }
+      { search.albums ? <MediaCollection data={search.albums.data} /> : <NotFound /> }
       <h2 className={styles.heading}>Playlists</h2>
-      { search.playlists ? <PlaylistCollection data={search.playlists.data} /> : <NotFound /> }
+      { search.playlists ? <MediaCollection data={search.playlists.data} /> : <NotFound /> }
     </Fragment>
   ) : (
     <LoadingSpinner />
