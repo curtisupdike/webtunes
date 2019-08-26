@@ -47,16 +47,7 @@
   padding-top: 8px;
 }
 
-.descriptionLink {
-  text-decoration: none;
-}
-
-.descriptionLink:hover {
-  color: var(--light-font-color);
-  text-decoration: underline;
-}
-
-.description {
+.date {
   color: var(--light-font-color);
   composes: text;
   padding-bottom: 10px;
