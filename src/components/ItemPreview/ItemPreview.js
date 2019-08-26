@@ -6,18 +6,12 @@ import Artwork from '../Artwork/Artwork';
 import PlayButton from '../PlayButton/PlayButton';
 
 function ItemPreview({id, artwork, artworkLink, name, description, playParams, type}) {
-  const [descriptionLink, setDescriptionLink] = useState(null);  
+  const [artistLink, setArtistLink] = useState(null);  
   useEffect(() => {
     if (type === 'album') {
       music.instance.api.album(id).then(res => {
         if (res.relationships.artists.data[0]) {
-          setDescriptionLink(`/artist/${res.relationships.artists.data[0].id}`);
-        }
-      });
-    } else {
-     music.instance.api.playlist(id).then(res => {
-        if (res.relationships.curator.data[0]) {
-          setDescriptionLink(`/curator/${res.relationships.curator.data[0].id}`);
+          setArtistLink(`/artist/${res.relationships.artists.data[0].id}`);
         }
       });
     }
@@ -37,8 +31,8 @@ function ItemPreview({id, artwork, artworkLink, name, description, playParams, t
         <PlayButton className={styles.playButton} {...playParams} />
       </div>
       <p className={styles.name}>{name}</p>
-      { descriptionLink ? (
-          <Link to={descriptionLink} className={styles.descriptionLink}>
+      { artistLink ? (
+          <Link to={artistLink} className={styles.artistLink}>
             <p className={styles.description}>{description}</p>
           </Link>
         ) : (

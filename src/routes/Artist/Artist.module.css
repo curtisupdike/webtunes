@@ -5,13 +5,9 @@
 }
 
 .artists {
-  margin: 0 48px;
-}
-
-.artists {
   justify-items: center;
   display: grid;
   grid-row-gap: 24px;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  margin: 0 2rem;
+  margin: 0 48px;
 }

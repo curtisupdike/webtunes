@@ -4,6 +4,7 @@ import useAuthorization from './hooks/useAuthorization';
 import LoginButton from './components/LoginButton/LoginButton';
 import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
+import Player from './components/Player/Player';
 import Browse from './routes/Browse/Browse';
 import Search from './routes/Search/Search';
 import Album from './routes/Album/Album';
@@ -17,7 +18,6 @@ import {
   title,
   main
 } from './App.module.css';
-import Player from './components/Player/Player';
 
 function App() {
   const isAuthorized = useAuthorization();

@@ -47,11 +47,11 @@
   padding-top: 8px;
 }
 
-.descriptionLink {
+.artistLink {
   text-decoration: none;
 }
 
-.descriptionLink:hover {
+.artistLink:hover {
   color: var(--light-font-color);
   text-decoration: underline;
 }
