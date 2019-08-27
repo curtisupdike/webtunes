@@ -6,6 +6,8 @@ import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
 import Player from './components/Player/Player';
 import Browse from './routes/Browse/Browse';
+import LibraryAlbums from './routes/LibararyAlbums/LibraryAlbums';
+import LibraryAlbum from './routes/LibraryAlbum/LibraryAlbum';
 import Search from './routes/Search/Search';
 import Album from './routes/Album/Album';
 import Artist from './routes/Artist/Artist';
@@ -37,6 +39,8 @@ function App() {
         <Router>
           <Redirect noThrow from="/" to="browse" />
           <Browse path="browse" />
+          <LibraryAlbums path="library/albums" />
+          <LibraryAlbum path="library/album/:id" />
           <Search path="search/:query" />
           <Album path="album/:id" />
           <Artist path="artist/:id" />

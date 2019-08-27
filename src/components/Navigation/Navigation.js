@@ -25,7 +25,7 @@ function Navigation({isAuthorized}) {
         <Fragment>
           <p className={label}>Library</p>
           <NavLink to="recentlyAdded" className={recentlyAdded}>Recently Added</NavLink>
-          <NavLink to="albums" className={albums}>Albums</NavLink>
+          <NavLink to="library/albums" className={albums}>Albums</NavLink>
           <NavLink to="artists" className={artists}>Artists</NavLink>
           <NavLink to="songs" className={songs}>Songs</NavLink>
           <p className={label}>Playlists</p>

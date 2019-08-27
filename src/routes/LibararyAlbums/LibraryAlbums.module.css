@@ -1,0 +1,11 @@
+.albums {
+  justify-items: center;
+  display: grid;
+  grid-column-gap: 48px;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  margin: 0 48px;
+}
+
+.albums > * {
+  padding: 12px 0;
+}
