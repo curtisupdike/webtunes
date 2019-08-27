@@ -20,6 +20,10 @@
   opacity: 100;
 }
 
+.playButton:focus {
+  opacity: 100;
+}
+
 .playButton {
   position: absolute;
   left: 10px;
