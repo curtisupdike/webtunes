@@ -16,7 +16,7 @@
 
 .forYou,
 .browse,
-.recentlyAdded,
+.recent,
 .albums,
 .artists,
 .songs,
@@ -56,11 +56,11 @@
   background-position: -18px 0px;
 }
 
-.recentlyAdded::before {
+.recent::before {
   background-position: 0px -414px;
 }
 
-.recentlyAdded.active::before {
+.recent.active::before {
   background-position: -18px -414px;
 }
 
