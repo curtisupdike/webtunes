@@ -47,13 +47,9 @@ function App() {
           <Album path="album/:id" />
           <Artist path="artist/:id" />
           <Playlist path="playlist/:id" />
-          {isAuthorized && (
-            <>
-              <ForYou path="/foryou" />
-              <LibraryAlbums path="library/albums" />
-              <LibraryAlbum path="library/album/:id" />
-            </>
-          )}
+          {isAuthorized && <ForYou path="/foryou" />}
+          {isAuthorized && <LibraryAlbums path="library/albums" />}
+          {isAuthorized && <LibraryAlbum path="library/album/:id" />}
           <NotFound default />
         </Router>
       </main>
