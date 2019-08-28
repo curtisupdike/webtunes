@@ -12,7 +12,7 @@ function LibraryAlbum({id}) {
   useEffect(() => {
     music.api.library.album(id).then(res => {
       setAlbum(res);
-    })
+    });
   }, [id]);
 
   return album ? (
