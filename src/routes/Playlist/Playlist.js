@@ -14,6 +14,7 @@ function Playlist({id}) {
     music.instance.api.playlist(id).then(res => {
       setPlaylist(res.attributes);
       setTracks(res.relationships.tracks.data);
+      console.log(res);
     })
   }, [id]);
 

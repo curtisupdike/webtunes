@@ -10,7 +10,10 @@ function MediaCollection({data}) {
           <ItemPreview 
             key={item.id}
             artwork={item.attributes.artwork}
-            artworkLink={`/album/${item.id}`}
+            artworkLink={item.type === 'albums'
+              ? `/album/${item.id}`
+              : `/playlist/${item.id}`
+            }
             name={item.attributes.name} 
             description={item.type === 'albums'
               ? item.attributes.artistName
