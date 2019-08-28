@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './LibraryAlbums.module.css';
-import ItemPreview from '../../components/ItemPreview/ItemPreview';
+import LibraryItemPreview from '../../components/LibraryItemPreview/LibraryItemPreview';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 function LibraryAlbums() {
@@ -15,14 +15,13 @@ function LibraryAlbums() {
   return albums ? (
     <div className={styles.albums}>
       {albums.map(item => (
-        <ItemPreview 
+        <LibraryItemPreview 
           key={item.id}
           artwork={item.attributes.artwork}
           artworkLink={`/library/album/${item.id}`}
           name={item.attributes.name}
           description={item.attributes.artistName}
           playParams={item.attributes.playParams}
-          album={item.id}
         />
       ))}
     </div>

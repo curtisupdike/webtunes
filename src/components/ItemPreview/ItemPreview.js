@@ -9,7 +9,7 @@ function ItemPreview({artwork, artworkLink, name, description, playParams, album
   const [artistLink, setArtistLink] = useState(null);  
   useEffect(() => {
     if (album) {
-      music.instance.api.album(album).then(res => {
+      music.api.album(album).then(res => {
         if (res.relationships.artists.data[0]) {
           setArtistLink(`/artist/${res.relationships.artists.data[0].id}`);
         }

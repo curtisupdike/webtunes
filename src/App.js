@@ -7,6 +7,7 @@ import Navigation from './components/Navigation/Navigation';
 import Player from './components/Player/Player';
 import ForYou from './routes/ForYou/ForYou';
 import Browse from './routes/Browse/Browse';
+import RecentlyAdded from './routes/RecentlyAdded/RecentlyAdded';
 import LibraryAlbums from './routes/LibararyAlbums/LibraryAlbums';
 import LibraryAlbum from './routes/LibraryAlbum/LibraryAlbum';
 import Search from './routes/Search/Search';
@@ -47,7 +48,8 @@ function App() {
           <Album path="album/:id" />
           <Artist path="artist/:id" />
           <Playlist path="playlist/:id" />
-          {isAuthorized && <ForYou path="/foryou" />}
+          {isAuthorized && <ForYou path="foryou" />}
+          {isAuthorized && <RecentlyAdded path="library/recent" />}
           {isAuthorized && <LibraryAlbums path="library/albums" />}
           {isAuthorized && <LibraryAlbum path="library/album/:id" />}
           <NotFound default />

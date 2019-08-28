@@ -1,11 +1,8 @@
 .albums {
-  justify-items: center;
   display: grid;
-  grid-column-gap: 48px;
-  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-  margin: 0 48px;
-}
-
-.albums > * {
-  padding: 12px 0;
+  grid-column-gap: 36px;
+  grid-row-gap: 24px;
+  grid-template-columns: repeat(auto-fill, 164px);
+  justify-content: center;
+  margin: 24px 48px;
 }
