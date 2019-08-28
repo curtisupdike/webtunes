@@ -5,6 +5,7 @@ import LoginButton from './components/LoginButton/LoginButton';
 import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
 import Player from './components/Player/Player';
+import ForYou from './routes/ForYou/ForYou';
 import Browse from './routes/Browse/Browse';
 import LibraryAlbums from './routes/LibararyAlbums/LibraryAlbums';
 import LibraryAlbum from './routes/LibraryAlbum/LibraryAlbum';
@@ -37,14 +38,22 @@ function App() {
       <Player />
       <main className={main}>
         <Router>
-          <Redirect noThrow from="/" to="browse" />
+          {isAuthorized 
+            ? <Redirect noThrow from="/" to="foryou" />
+            : <Redirect noThrow from="/" to="browse" />
+          }
           <Browse path="browse" />
-          <LibraryAlbums path="library/albums" />
-          <LibraryAlbum path="library/album/:id" />
           <Search path="search/:query" />
           <Album path="album/:id" />
           <Artist path="artist/:id" />
           <Playlist path="playlist/:id" />
+          {isAuthorized && (
+            <>
+              <ForYou path="/foryou" />
+              <LibraryAlbums path="library/albums" />
+              <LibraryAlbum path="library/album/:id" />
+            </>
+          )}
           <NotFound default />
         </Router>
       </main>

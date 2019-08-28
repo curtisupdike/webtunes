@@ -10,9 +10,8 @@ function LibraryAlbum({id}) {
   const [album, setAlbum] = useState(null);
 
   useEffect(() => {
-    music.instance.api.library.album(id).then(res => {
+    music.api.library.album(id).then(res => {
       setAlbum(res);
-      console.log(res);
     })
   }, [id]);
 

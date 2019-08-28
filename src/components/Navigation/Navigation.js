@@ -18,7 +18,7 @@ function Navigation({isAuthorized}) {
     <nav>
       <p className={label}>Apple Music</p>
       { isAuthorized && 
-        <NavLink to="forYou" className={forYou}>For You</NavLink> 
+        <NavLink to="foryou" className={forYou}>For You</NavLink> 
       }
       <NavLink to="browse" className={browse}>Browse</NavLink>
       { isAuthorized &&
