@@ -10,9 +10,22 @@
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
   background: #f0f0f0;
   grid-area: sidebar;
   font-weight: 500;
+}
+
+.navigation {
+  flex: 1;
+}
+
+.info {
+  border-top: 2px solid var(--border-color);
+  color: var(--dark-font-color);
+  font-size: 13px;
+  padding: 8px 12px 0;
 }
 
 .header {
@@ -33,7 +46,7 @@
 .main {
   box-sizing: border-box;
   grid-area: main;
-  height: 100%;
+  max-height: 100%;
   padding: 24px 0;
   overflow: scroll;
 }
