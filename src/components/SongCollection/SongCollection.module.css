@@ -1,6 +1,7 @@
 .collection {
   display: grid;
   grid-auto-flow: column;  
+  justify-content: start;
   overflow: scroll;
   padding: 15px 0 24px 48px;
   grid-column-gap: 48px;

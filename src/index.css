@@ -7,6 +7,10 @@
   --border-color: #e5e5e5;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   color: var(--base-font-color);
@@ -14,6 +18,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   font-weight: 500;
+  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -10,6 +10,7 @@
 }
 
 .sidebar {
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   background: #f0f0f0;
@@ -47,6 +48,5 @@
   box-sizing: border-box;
   grid-area: main;
   max-height: 100%;
-  padding: 24px 0;
   overflow: scroll;
 }
