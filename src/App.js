@@ -10,7 +10,6 @@ import Browse from './routes/Browse/Browse';
 import RecentlyAdded from './routes/RecentlyAdded/RecentlyAdded';
 import LibraryAlbums from './routes/LibararyAlbums/LibraryAlbums';
 import LibraryArtists from './routes/LibraryArtists/LibraryArtists';
-import LibrarySongs from './routes/LibrarySongs/LibrarySongs';
 import LibraryAlbum from './routes/LibraryAlbum/LibraryAlbum';
 import LibraryPlaylist from './routes/LibraryPlaylist/LibraryPlaylist';
 import Search from './routes/Search/Search';
@@ -50,7 +49,6 @@ function App() {
           {isAuthorized && <RecentlyAdded path="library/recent" />}
           {isAuthorized && <LibraryAlbums path="library/albums" />}
           {isAuthorized && <LibraryArtists path="library/artists" />}
-          {isAuthorized && <LibrarySongs path="library/songs" />}
           {isAuthorized && <LibraryAlbum path="library/album/:id" />}
           {isAuthorized && <LibraryPlaylist path="library/playlist/:id" />}
           <NotFound default />
