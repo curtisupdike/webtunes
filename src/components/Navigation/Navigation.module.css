@@ -1,9 +1,19 @@
+.nav {
+  flex: 1;
+  max-height: calc(100vh - 160px);
+  overflow: scroll; 
+}
+
 .label {
   color: #878786;
   font-size: 12px;
   font-weight: bold;
-  margin: 16px 0 4px;
+  margin: 12px 0 4px;
   padding: 0 8px;
+}
+
+.label:first-of-type {
+  margin-top: 0;
 }
 
 .link {

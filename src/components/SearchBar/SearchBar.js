@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { navigate } from '@reach/router';
-import { searchBar, input } from './SearchBar.module.css';
+import styles from './SearchBar.module.css';
 
 function SearchBar() {
   const [value, setValue] = useState('');
@@ -17,16 +17,18 @@ function SearchBar() {
   }
 
   return(
-    <div className={searchBar}>
-      <input 
-        className={input} 
-        type="text"
-        placeholder="Search" 
-        value={value}
-        onChange={handleChange}
-        onKeyDown={handleSubmit}
-      />
-    </div>
+    <>
+      <div className={styles.searchBar}>
+        <input 
+          className={styles.input} 
+          type="text"
+          placeholder="Search" 
+          value={value}
+          onChange={handleChange}
+          onKeyDown={handleSubmit}
+        />
+      </div>
+    </>
   );
 }
 

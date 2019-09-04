@@ -1,7 +1,6 @@
 import React from 'react';
 import { Router, Redirect } from '@reach/router';
 import useAuthorization from './hooks/useAuthorization';
-import LoginButton from './components/LoginButton/LoginButton';
 import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
 import Player from './components/Player/Player';
@@ -26,15 +25,11 @@ function App() {
   return (
     <div className={styles.app}>
       <div className={styles.sidebar}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>webTunes</h1>
-          <LoginButton isAuthorized={isAuthorized} />
-        </header>
         <SearchBar />
-        <Navigation className={styles.navigation} isAuthorized={isAuthorized} />
-        <p className={styles.info}>An unoffical web player for Apple Music.</p>
+        <Navigation isAuthorized={isAuthorized} />
+        <p className={styles.info}>Another unofficial web player for Apple Music.</p>
       </div>
-      <Player />
+      <Player isAuthorized={isAuthorized} />
       <main className={styles.main}>
         <Router>
           {isAuthorized 

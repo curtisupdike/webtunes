@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Player.module.css';
 import { music, player } from '../../services/music';
 import Artwork from '../Artwork/Artwork';
+import LoginButton from '../LoginButton/LoginButton';
 import { 
   PreviousButton,
   PauseButton,
@@ -9,11 +10,15 @@ import {
   NextButton
 } from './Buttons/Buttons';
 
-function Player() {
+function Player({isAuthorized}) {
   return (
     <div className={styles.player}>
       <NowPlaying />
       <Controls />
+      <header className={styles.header}>
+        <h1 className={styles.title}>webTunes</h1>
+        <LoginButton isAuthorized={isAuthorized} />
+      </header>
     </div>
   );
 }
@@ -37,7 +42,7 @@ function NowPlaying() {
         className={styles.artwork}
       />
       <div className={styles.text}>
-        <p className={styles.title}>{nowPlayingItem.title}</p>
+        <p className={styles.name}>{nowPlayingItem.title}</p>
         <p className={styles.albumInfo}>{nowPlayingItem.albumInfo}</p>
       </div>
     </div>
