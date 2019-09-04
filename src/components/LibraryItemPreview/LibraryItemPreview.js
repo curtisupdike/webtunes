@@ -4,7 +4,13 @@ import styles from './LibraryItemPreview.module.css';
 import Artwork from '../Artwork/Artwork';
 import PlayButton from '../PlayButton/PlayButton';
 
-function LibraryItemPreview({artwork, artworkLink, name, description, playParams}) {
+function LibraryItemPreview({
+  artwork,
+  artworkLink,
+  name,
+  description,
+  playParams
+}) {
   return (
     <div>
       <div className={styles.item}>

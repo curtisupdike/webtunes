@@ -6,23 +6,23 @@ import MediaCollection from '../../components/MediaCollection/MediaCollection';
 
 function ForYou() {
   const [recommendations, setRecomendations] = useState(null);
-
   useEffect(() => {
-    music.api.recommendations().then(res => {
-      setRecomendations(res);
-    });
+    music.api.recommendations()
+      .then(res => setRecomendations(res));
   }, [])
 
   return recommendations ? (
-    <Fragment>
+    <>
       <h1 className={styles.title}>For You</h1>
       {recommendations.map((item, key) => (
         <Fragment key={key}>
-          <h2 className={styles.heading}>{item.attributes.title.stringForDisplay}</h2>
+          <h2 className={styles.heading}>
+            {item.attributes.title.stringForDisplay}
+          </h2>
           <MediaCollection data={item.relationships.contents.data} />
         </Fragment>
       ))}
-    </Fragment>
+    </>
   ) : (
     <LoadingSpinner />
   );

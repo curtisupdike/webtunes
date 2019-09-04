@@ -1,4 +1,5 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
+import { music } from '../../services/music';
 import styles from './RecentlyAdded.module.css';
 import LibraryItemPreview from '../../components/LibraryItemPreview/LibraryItemPreview';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -6,14 +7,12 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 function RecentlyAdded() {
   const [media, setMedia] = useState(null);
   useEffect(() => {
-    const music = window.MusicKit.getInstance();
-    music.api.library.recentlyAdded().then(res => {
-      setMedia(res);
-    })
+    music.api.library.recentlyAdded()
+      .then(res => setMedia(res))
   }, []);
 
   return media ? (
-    <Fragment>
+    <>
       <h1 className={styles.title}>Recently Added</h1>
       <div className={styles.media}>
         {media.map(item => (
@@ -30,7 +29,7 @@ function RecentlyAdded() {
           />
         ))}
       </div>
-    </Fragment>
+    </>
   ) : (
     <LoadingSpinner />
   );

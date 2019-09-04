@@ -3,7 +3,6 @@ import { music, user } from '../services/music';
 
 function useAuthorization() {
   const [isAuthorized, setIsAuthorized] = useState(user.isAuthorized);
-
   useEffect(() => {
     const handleChange = () => {
       setIsAuthorized(user.isAuthorized);

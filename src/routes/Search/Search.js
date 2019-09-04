@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { music } from '../../services/music';
 import styles from './Search.module.css';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -11,13 +11,12 @@ function Search({query}) {
   const [search, setSearch] = useState(null);
 
   useEffect(() => {
-    music.api.search(query, {limit: 16}).then(res =>{
-      setSearch(res);
-    }).catch(err => console.error(err));
+    music.api.search(query, {limit: 16})
+      .then(res => setSearch(res));
   }, [query]);
 
   return search ? (
-    <Fragment>
+    <>
       <h1 className={styles.title}>Search</h1>
       <h2 className={styles.heading}>Songs</h2>
       {search.songs ? <SongCollection data={search.songs.data} /> : <NotFound />}
@@ -27,7 +26,7 @@ function Search({query}) {
       { search.albums ? <MediaCollection data={search.albums.data} /> : <NotFound /> }
       <h2 className={styles.heading}>Playlists</h2>
       { search.playlists ? <MediaCollection data={search.playlists.data} /> : <NotFound /> }
-    </Fragment>
+    </>
   ) : (
     <LoadingSpinner />
   );

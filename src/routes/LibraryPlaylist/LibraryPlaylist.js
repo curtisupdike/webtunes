@@ -10,9 +10,8 @@ function LibraryPlaylist({id}) {
   const [playlist, setPlaylist] = useState(null);
 
   useEffect(() => {
-    music.api.library.playlist(id).then(res => {
-      setPlaylist(res);
-    });
+    music.api.library.playlist(id)
+      .then(res => setPlaylist(res));
   }, [id]);
 
   return playlist ? (
@@ -25,7 +24,9 @@ function LibraryPlaylist({id}) {
           size="320"
         />
         <div className={styles.info}>
-          <p className={styles.trackCount}>{playlist.relationships.tracks.data.length} Songs</p>
+          <p className={styles.trackCount}>
+            {playlist.relationships.tracks.data.length} Songs
+          </p>
           <PlayButton className={styles.playButton} {...playlist.attributes.playParams} />
         </div>
       </div>

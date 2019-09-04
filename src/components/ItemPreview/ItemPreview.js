@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from '@reach/router';
 import { music } from '../../services/music';
 import styles from './ItemPreview.module.css';
 import Artwork from '../Artwork/Artwork';
 import PlayButton from '../PlayButton/PlayButton';
 
-function ItemPreview({artwork, artworkLink, name, description, playParams, album}) {
+function ItemPreview({
+  artwork,
+  artworkLink,
+  name,
+  description,
+  playParams,
+  album
+}) {
   const [artistLink, setArtistLink] = useState(null);  
-  useEffect(() => {
-    if (album) {
-      music.api.album(album).then(res => {
+  if (album) {
+    music.api.album(album)
+      .then(res => {
         if (res.relationships.artists.data[0]) {
           setArtistLink(`/artist/${res.relationships.artists.data[0].id}`);
         }
       });
-    }
-  });
+  }
 
   return (
     <div>

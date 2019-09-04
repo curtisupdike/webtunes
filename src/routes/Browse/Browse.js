@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { music } from '../../services/music';
 import styles from './Browse.module.css';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -9,13 +9,12 @@ function Browse() {
   const [charts, setCharts] = useState(null);
 
   useEffect(() => {
-    music.api.charts(['songs', 'albums', 'playlists'], { limit: 36 }).then(res => {
-      setCharts(res);
-    });
+    music.api.charts(['songs', 'albums', 'playlists'], { limit: 36 })
+      .then(res => setCharts(res))
   }, [])
 
   return charts ? (
-    <Fragment>
+    <>
       <h1 className={styles.title}>Browse</h1>
       <h2 className={styles.heading}>Top Songs</h2>
       <SongCollection data={charts.songs[0].data} />
@@ -23,7 +22,7 @@ function Browse() {
       <MediaCollection data={charts.albums[0].data} />
       <h2 className={styles.heading}>Top Playlists</h2>
       <MediaCollection data={charts.playlists[0].data} />
-    </Fragment>
+    </>
   ) : (
     <LoadingSpinner />
   );

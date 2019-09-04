@@ -6,11 +6,9 @@ import PlayButton from '../PlayButton/PlayButton';
 function AlbumTracklist({tracks}) {
   return (
     <div className={styles.tracklist}>
-      {tracks.map((item, key) => {
-        return (
-          <AlbumTrack key={key} {...item.attributes} />
-        );
-      })}
+      {tracks.map((item, key) => (
+        <AlbumTrack key={key} {...item.attributes} />
+      ))}
     </div>
   );
 }
@@ -23,7 +21,9 @@ function AlbumTrack({trackNumber, name, durationInMillis, playParams}) {
         <PlayButton className={styles.playButton} {...playParams} />
       </div>
       <p className={styles.name}>{name}</p>
-      <p className={styles.duration}>{formatMediaTime(durationInMillis)}</p>
+      <p className={styles.duration}>
+        {formatMediaTime(durationInMillis)}
+      </p>
     </div>
   );
 }

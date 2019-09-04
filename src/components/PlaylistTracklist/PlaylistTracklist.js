@@ -16,16 +16,14 @@ function PlaylistTracklist({tracks}) {
   );
 }
 
-function PlaylistTrack(props) {
-  const {
-    artistName,
-    albumName,
-    artwork,
-    name, 
-    durationInMillis,
-    playParams
-  } = props;
-
+function PlaylistTrack({
+  artistName,
+  albumName,
+  artwork,
+  name, 
+  durationInMillis,
+  playParams
+}) {
   return (
     <div className={styles.track}>
       <div className={styles.album}>
@@ -42,7 +40,9 @@ function PlaylistTrack(props) {
           <p className={styles.name}>{name}</p>
           <p className={styles.artistName}>{artistName}</p>
         </div>
-        <p className={styles.duration}>{formatMediaTime(durationInMillis)}</p>
+        <p className={styles.duration}>
+          {formatMediaTime(durationInMillis)}
+        </p>
       </div>
     </div>
   );

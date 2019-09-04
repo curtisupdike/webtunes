@@ -5,9 +5,8 @@ import ItemPreview from '../../../components/ItemPreview/ItemPreview';
 function ArtistAlbum({id}) {
   const [album, setAlbum] = useState(null);
   useEffect(() => {
-    music.api.album(id).then(res => {
-      setAlbum(res.attributes);
-    });
+    music.api.album(id)
+      .then(res => setAlbum(res.attributes));
   }, [id]);
 
   return album && (

@@ -12,11 +12,10 @@ function LibrarySongs() {
       limit: 100,
       offset: songs.length
     })
-      .then(res => {res.length === 0
-        ? setLoading(false)
-        : setSongs([...songs, ...res]);
-      })
-      .catch(e => console.error(e));
+      .then(res => res.length > 0
+        ? setSongs([...songs, ...res])
+        : setLoading(false)
+      )
   }, [songs]);
 
   return songs.length > 0 ? (

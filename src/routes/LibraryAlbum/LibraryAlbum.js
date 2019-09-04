@@ -8,11 +8,9 @@ import PlayButton from '../../components/PlayButton/PlayButton';
 
 function LibraryAlbum({id}) {
   const [album, setAlbum] = useState(null);
-
   useEffect(() => {
-    music.api.library.album(id).then(res => {
-      setAlbum(res);
-    });
+    music.api.library.album(id)
+      .then(res => setAlbum(res));
   }, [id]);
 
   return album ? (

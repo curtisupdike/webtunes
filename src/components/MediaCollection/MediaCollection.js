@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styles from './MediaCollection.module.css';
 import ItemPreview from '../ItemPreview/ItemPreview';
 
 function MediaCollection({data}) {
   return (
-    <Fragment>
+    <>
       <div className={styles.collection}>
         {data.map(item => (
           <ItemPreview 
@@ -27,7 +27,7 @@ function MediaCollection({data}) {
           />
         ))}
       </div>
-    </Fragment>
+    </>
   );
 }
 

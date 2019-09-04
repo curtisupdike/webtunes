@@ -39,7 +39,9 @@ function SongItem({artistName, artwork, durationInMillis, name, playParams}) {
           <p className={styles.name}>{name}</p>
           <p className={styles.artistName}>{artistName}</p>
         </div>
-        <p className={styles.duration}>{formatMediaTime(durationInMillis)}</p>
+        <p className={styles.duration}>
+          {formatMediaTime(durationInMillis)}
+        </p>
       </div>
     </div>
   );

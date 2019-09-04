@@ -9,11 +9,9 @@ import PlayButton from '../../components/PlayButton/PlayButton';
 
 function Album({id}) {
   const [album, setAlbum] = useState(null);
-
   useEffect(() => {
-    music.api.album(id).then(res => {
-      setAlbum(res);
-    })
+    music.api.album(id)
+      .then(res => setAlbum(res))
   }, [id]);
 
   return album ? (

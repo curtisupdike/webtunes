@@ -8,9 +8,8 @@ function Artist({id}) {
   const [artist, setArtist] = useState(null);
   
   useEffect(() => {
-    music.api.artist(id).then(res => {
-      setArtist(res);
-    });
+    music.api.artist(id)
+      .then(res => setArtist(res));
   }, [id]);
 
   return artist ? (
