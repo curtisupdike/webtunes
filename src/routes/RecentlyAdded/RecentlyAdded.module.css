@@ -1,5 +1,5 @@
 .title {
-  margin: 12px 48px;
+  margin: var(--y-margin) var(--x-margin);
 }
 
 .media {

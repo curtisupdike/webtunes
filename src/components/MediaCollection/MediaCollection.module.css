@@ -4,10 +4,10 @@
   grid-column-gap: 30px;
   justify-content: start;
   overflow: scroll;
-  padding: 16px 0 24px 48px;
+  padding: 16px 0 24px var(--x-margin);
 }
 
 /* hack for padding with overflow */
 .collection > *:last-child {
-  padding-right: 48px;
+  padding-right: var(--x-margin);
 }

@@ -4,5 +4,5 @@
   grid-row-gap: 24px;
   grid-template-columns: repeat(auto-fill, 164px);
   justify-content: center;
-  margin: 24px 48px;
+  margin: var(--x-margin) var(--y-margin);
 }

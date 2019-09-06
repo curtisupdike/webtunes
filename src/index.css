@@ -5,6 +5,8 @@
   --light-font-color: #8e8e93;
   --brand-color: #007EE6;
   --border-color: #e5e5e5;
+  --x-margin: 36px;
+  --y-margin: 24px;
 }
 
 * {

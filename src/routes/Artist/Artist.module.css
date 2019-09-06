@@ -1,6 +1,6 @@
 .name {
   border-bottom: 1px solid var(--border-color);
-  margin: 0 48px 24px;
+  margin: var(--y-margin) var(--x-margin);
   padding-bottom: 12px;
 }
 

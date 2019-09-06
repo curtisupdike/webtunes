@@ -3,15 +3,11 @@
   grid-auto-flow: column;  
   justify-content: start;
   overflow: scroll;
-  padding: 15px 0 24px 48px;
+  margin-right: var(--x-margin);
+  padding: 15px 0 24px var(--x-margin);
   grid-column-gap: 48px;
   grid-row-gap: 5px;
   grid-template-rows: repeat(4, 50px); 
-}
-
-/* hack for padding with overflow */
-.collection > *:last-child {
-  padding-right: 48px;
 }
 
 .track {
