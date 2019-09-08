@@ -11,6 +11,7 @@ function Browse() {
   useEffect(() => {
     music.api.charts(['songs', 'albums', 'playlists'], { limit: 36 })
       .then(res => setCharts(res))
+      .catch(e => console.error(e));
   }, [])
 
   return charts ? (

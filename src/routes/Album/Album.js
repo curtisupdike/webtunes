@@ -12,6 +12,7 @@ function Album({id}) {
   useEffect(() => {
     music.api.album(id)
       .then(res => setAlbum(res))
+      .catch(e => console.error(e));
   }, [id]);
 
   return album ? (

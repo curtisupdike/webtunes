@@ -18,6 +18,7 @@ function Playlist({id}) {
         setTracks(res.relationships.tracks.data);
         setLoading(false)
       })
+      .catch(e => console.error(e));
   }, [id]);
 
   return loading ? (

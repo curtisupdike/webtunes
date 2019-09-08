@@ -6,7 +6,8 @@ function ArtistAlbum({id}) {
   const [album, setAlbum] = useState(null);
   useEffect(() => {
     music.api.album(id)
-      .then(res => setAlbum(res.attributes));
+      .then(res => setAlbum(res.attributes))
+      .catch(e => console.error(e));
   }, [id]);
 
   return album && (

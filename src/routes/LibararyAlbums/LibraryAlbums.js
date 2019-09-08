@@ -16,6 +16,7 @@ function LibraryAlbums() {
         ? setAlbums([...albums, ...res])
         : setLoading(false)
       )
+      .catch(e => console.error(e));
   }, [albums]);
 
   return albums.length > 0 ? (

@@ -9,7 +9,8 @@ function Navigation({isAuthorized, className}) {
   useEffect(() => {
     if (isAuthorized) {
       music.api.library.playlists()
-        .then(res => setPlaylists(res));
+        .then(res => setPlaylists(res))
+        .catch(e => console.error(e));
     } else {
       setPlaylists(null);
     }

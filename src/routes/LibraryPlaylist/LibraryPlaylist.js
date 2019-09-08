@@ -11,7 +11,8 @@ function LibraryPlaylist({id}) {
 
   useEffect(() => {
     music.api.library.playlist(id)
-      .then(res => setPlaylist(res));
+      .then(res => setPlaylist(res))
+      .catch(e => console.error(e));
   }, [id]);
 
   return playlist ? (

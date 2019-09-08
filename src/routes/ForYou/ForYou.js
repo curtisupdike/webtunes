@@ -8,7 +8,8 @@ function ForYou() {
   const [recommendations, setRecomendations] = useState(null);
   useEffect(() => {
     music.api.recommendations()
-      .then(res => setRecomendations(res));
+      .then(res => setRecomendations(res))
+      .catch(e => console.error(e));
   }, [])
 
   return recommendations ? (

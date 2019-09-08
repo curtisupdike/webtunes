@@ -17,6 +17,7 @@ function LibraryArtists() {
 				? setArtists([...artists, ...res])
 				: setLoading(false)
 			)
+			.catch(e => console.error(e));
 	}, [artists]);
 
 	function handleClick(id) {

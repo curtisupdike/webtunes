@@ -10,7 +10,8 @@ function LibraryAlbum({id}) {
   const [album, setAlbum] = useState(null);
   useEffect(() => {
     music.api.library.album(id)
-      .then(res => setAlbum(res));
+      .then(res => setAlbum(res))
+      .catch(e => console.error(e));
   }, [id]);
 
   return album ? (

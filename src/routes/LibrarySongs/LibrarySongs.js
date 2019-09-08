@@ -16,6 +16,7 @@ function LibrarySongs() {
         ? setSongs([...songs, ...res])
         : setLoading(false)
       )
+      .catch(e => console.error(e));
   }, [songs]);
 
   return songs.length > 0 ? (

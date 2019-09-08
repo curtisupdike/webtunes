@@ -9,7 +9,8 @@ function Artist({id}) {
   
   useEffect(() => {
     music.api.artist(id)
-      .then(res => setArtist(res));
+      .then(res => setArtist(res))
+      .catch(e => console.error(e));
   }, [id]);
 
   return artist ? (

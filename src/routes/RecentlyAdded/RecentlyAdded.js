@@ -9,6 +9,7 @@ function RecentlyAdded() {
   useEffect(() => {
     music.api.library.recentlyAdded()
       .then(res => setMedia(res))
+      .catch(e => console.error(e));
   }, []);
 
   return media ? (

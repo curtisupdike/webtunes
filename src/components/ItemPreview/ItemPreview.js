@@ -20,7 +20,8 @@ function ItemPreview({
         if (res.relationships.artists.data[0]) {
           setArtistLink(`/artist/${res.relationships.artists.data[0].id}`);
         }
-      });
+      })
+      .catch(e => console.error(e));
   }
 
   return (
