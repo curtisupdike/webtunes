@@ -11,19 +11,7 @@ function ItemPreview({
   name,
   description,
   playParams,
-  album
 }) {
-  const [artistLink, setArtistLink] = useState(null);  
-  if (album) {
-    music.api.album(album)
-      .then(res => {
-        if (res.relationships.artists.data[0]) {
-          setArtistLink(`/artist/${res.relationships.artists.data[0].id}`);
-        }
-      })
-      .catch(e => console.error(e));
-  }
-
   return (
     <div>
       <div className={styles.item}>
@@ -38,14 +26,7 @@ function ItemPreview({
         <PlayButton className={styles.playButton} {...playParams} />
       </div>
       <p className={styles.name}>{name}</p>
-      { artistLink ? (
-          <Link to={artistLink} className={styles.artistLink}>
-            <p className={styles.description}>{description}</p>
-          </Link>
-        ) : (
-          <p className={styles.description}>{description}</p>
-        )
-      }
+      <p className={styles.description}>{description}</p>
     </div>
   );
 }

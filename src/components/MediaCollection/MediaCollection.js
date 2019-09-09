@@ -20,10 +20,6 @@ function MediaCollection({data}) {
               : item.attributes.curatorName
             } 
             playParams={item.attributes.playParams}
-            album={item.type === 'albums'
-             ? item.id
-             : null
-            }
           />
         ))}
       </div>

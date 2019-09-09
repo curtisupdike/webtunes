@@ -51,15 +51,6 @@
   padding-top: 8px;
 }
 
-.artistLink {
-  text-decoration: none;
-}
-
-.artistLink:hover {
-  color: var(--light-font-color);
-  text-decoration: underline;
-}
-
 .description {
   color: var(--light-font-color);
   composes: text;
