@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
-import { music } from '../../services/music';
 import styles from './ItemPreview.module.css';
 import Artwork from '../Artwork/Artwork';
 import PlayButton from '../PlayButton/PlayButton';
