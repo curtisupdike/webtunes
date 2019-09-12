@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router, Redirect } from '@reach/router';
-import useAuthorization from './hooks/useAuthorization';
+import { music, user } from './services/music';
 import SearchBar from './components/SearchBar/SearchBar';
 import Navigation from './components/Navigation/Navigation';
 import Player from './components/Player/Player';
@@ -53,6 +53,22 @@ function App() {
       </main>
     </div>
   );
+}
+
+function useAuthorization() {
+  const [isAuthorized, setIsAuthorized] = useState(user.isAuthorized);
+  useEffect(() => {
+    const handleChange = () => {
+      setIsAuthorized(user.isAuthorized);
+    }
+
+    music.instance.addEventListener('authorizationStatusDidChange', handleChange);
+    return () => {
+      music.instance.removeEventListener('authorizationStatusDidChange', handleChange);
+    }
+  });
+
+  return isAuthorized;
 }
 
 export default App;
