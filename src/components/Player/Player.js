@@ -33,7 +33,7 @@ function NowPlaying() {
     return () => music.instance.removeEventListener('mediaItemDidChange', handleChange);
   });
 
-  return nowPlayingItem && (
+  return nowPlayingItem ? (
     <div className={styles.nowPlaying}>
       <Artwork
         artwork={nowPlayingItem.artwork}
@@ -45,6 +45,10 @@ function NowPlaying() {
         <p className={styles.name}>{nowPlayingItem.title}</p>
         <p className={styles.albumInfo}>{nowPlayingItem.albumInfo}</p>
       </div>
+    </div>
+  ) : (
+    <div className={styles.nowPlaying}>
+      <div className={styles.albumPlaceholder} />
     </div>
   );
 }
