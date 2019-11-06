@@ -24,7 +24,7 @@ function Navigation({isAuthorized, className}) {
         <NavLink to="foryou" className={styles.forYou}>For You</NavLink> 
       }
       <NavLink to="browse" className={styles.browse}>Browse</NavLink>
-      {isAuthorized ? (
+      {isAuthorized &&
         <>
           <p className={styles.label}>Library</p>
           <NavLink to="library/recent" className={styles.recent}>Recently Added</NavLink>
@@ -42,13 +42,7 @@ function Navigation({isAuthorized, className}) {
             </NavLink>
           ))}
         </>
-      ) : ( 
-        <p className={styles.prompt}>
-          Log in to Apple Music for the full experience. 
-          Access your library and listen to full songs.
-        </p>
-      )}
-      <div className={styles.fadeOut} />
+      }
     </nav>
   );
 }

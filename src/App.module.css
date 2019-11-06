@@ -18,6 +18,16 @@
   font-weight: 500;
 }
 
+.prompt {
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  color: var(--light-font-color);
+  font-size: 13px;
+  margin: 10px 8px;
+  padding: 6px 8px;
+  text-align: center;
+}
+
 .info {
   align-items: center;
   border-top: 1px solid var(--border-color);

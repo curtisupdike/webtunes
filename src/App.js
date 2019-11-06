@@ -27,7 +27,13 @@ function App() {
       <div className={styles.sidebar}>
         <SearchBar />
         <Navigation isAuthorized={isAuthorized} />
-        <p className={styles.info}>Another unofficial web player for Apple Music.</p>
+        {!isAuthorized &&
+          <p className={styles.prompt}>
+            Log in to Apple Music <br/> 
+            to access your library and 
+            listen to full-length songs.
+          </p>
+        }
       </div>
       <Player isAuthorized={isAuthorized} />
       <main className={styles.main}>
