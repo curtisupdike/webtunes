@@ -8,20 +8,18 @@ import PlayButton from '../../components/PlayButton/PlayButton';
 
 function Playlist({id}) {
   const [playlist, setPlaylist] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [tracks, setTracks] = useState(null);
   useEffect(() => {
-    setLoading(true)
     music.api.playlist(id)
       .then(res => {
+        console.log(res);
         setPlaylist(res.attributes);
         setTracks(res.relationships.tracks.data);
-        setLoading(false)
       })
       .catch(e => console.error(e));
   }, [id]);
 
-  return loading ? (
+  return playlist && tracks ? (
     <div className={styles.playlist}>
       <div className={styles.left}>
         <Artwork
@@ -47,7 +45,7 @@ function Playlist({id}) {
         { tracks && <PlaylistTracklist tracks={tracks} /> }
       </div>
     </div>
-  ) : (
+   ) : (    
     <LoadingSpinner />
   );
 }
