@@ -4,13 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-window.MusicKit.configure({
-  developerToken: process.env.REACT_APP_JWT,
-  app: {
-    name: 'webTunes',
-    build: '0.01a',
-  }
-});
+fetch("/.netlify/functions/jwt")
+	.then(response => response.json())
+	.then(data => {
+		console.log(data.jwt);
+		window.MusicKit.configure({
+			developerToken: data.jwt,
+			app: {
+			name: 'webTunes',
+			build: '0.01a',
+			}
+		});
+		ReactDOM.render(<App />, document.getElementById('root'));
+	}).catch(error => console.error(error));
 
-ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
