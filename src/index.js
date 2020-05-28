@@ -7,15 +7,15 @@ import * as serviceWorker from './serviceWorker';
 fetch("/.netlify/functions/jwt")
 	.then(response => response.json())
 	.then(data => {
-		console.log(data.jwt);
 		window.MusicKit.configure({
-			developerToken: data.jwt,
+			developerToken: data.token,
 			app: {
-			name: 'webTunes',
-			build: '0.01a',
+				name: 'webTunes',
+				build: '0.01a',
 			}
 		});
 		ReactDOM.render(<App />, document.getElementById('root'));
-	}).catch(error => console.error(error));
+	})
+	.catch(error => console.error(error));
 
 serviceWorker.unregister();
