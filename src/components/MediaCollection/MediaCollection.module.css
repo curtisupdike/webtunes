@@ -1,13 +1,13 @@
 .collection {
-  display: grid;
-  grid-auto-flow: column;  
-  grid-column-gap: 30px;
-  justify-content: start;
-  overflow: scroll;
-  padding: 16px 0 24px var(--x-margin);
+	display: grid;
+	grid-auto-flow: column;
+	grid-column-gap: 30px;
+	justify-content: start;
+	overflow: scroll;
+	padding: 16px 0 24px var(--x-margin);
 }
 
 /* hack for padding with overflow */
 .collection > *:last-child {
-  padding-right: var(--x-margin);
+	padding-right: var(--x-margin);
 }

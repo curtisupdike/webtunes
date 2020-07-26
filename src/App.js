@@ -20,61 +20,67 @@ import NotFound from './components/NotFound/NotFound';
 import styles from './App.module.css';
 
 function App() {
-  const isAuthorized = useAuthorization();
+	const isAuthorized = useAuthorization();
 
-  return (
-    <div className={styles.app}>
-      <div className={styles.sidebar}>
-        <SearchBar />
-        <Navigation isAuthorized={isAuthorized} />
-        {!isAuthorized &&
-          <p className={styles.prompt}>
-            Log in to Apple Music <br/> 
-            to access your library and 
-            listen to full-length songs.
-          </p>
-        }
-      </div>
-      <Player isAuthorized={isAuthorized} />
-      <main className={styles.main}>
-        <Router>
-          {isAuthorized 
-            ? <Redirect noThrow from="/" to="foryou" />
-            : <Redirect noThrow from="/" to="browse" />
-          }
-          <Browse path="browse" />
-          <Search path="search/:query" />
-          <Album path="album/:id" />
-          <Artist path="artist/:id" />
-          <Playlist path="playlist/:id" />
-          {isAuthorized && <ForYou path="foryou" />}
-          {isAuthorized && <RecentlyAdded path="library/recent" />}
-          {isAuthorized && <LibraryAlbums path="library/albums" />}
-          {isAuthorized && <LibraryArtists path="library/artists" />}
-          {isAuthorized && <LibrarySongs path="library/songs" />}
-          {isAuthorized && <LibraryAlbum path="library/album/:id" />}
-          {isAuthorized && <LibraryPlaylist path="library/playlist/:id" />}
-          <NotFound default />
-        </Router>
-      </main>
-    </div>
-  );
+	return (
+		<div className={styles.app}>
+			<div className={styles.sidebar}>
+				<SearchBar />
+				<Navigation isAuthorized={isAuthorized} />
+				{!isAuthorized && (
+					<p className={styles.prompt}>
+						Log in to Apple Music <br />
+						to access your library and listen to full-length songs.
+					</p>
+				)}
+			</div>
+			<Player isAuthorized={isAuthorized} />
+			<main className={styles.main}>
+				<Router>
+					{isAuthorized ? (
+						<Redirect noThrow from="/" to="foryou" />
+					) : (
+						<Redirect noThrow from="/" to="browse" />
+					)}
+					<Browse path="browse" />
+					<Search path="search/:query" />
+					<Album path="album/:id" />
+					<Artist path="artist/:id" />
+					<Playlist path="playlist/:id" />
+					{isAuthorized && <ForYou path="foryou" />}
+					{isAuthorized && <RecentlyAdded path="library/recent" />}
+					{isAuthorized && <LibraryAlbums path="library/albums" />}
+					{isAuthorized && <LibraryArtists path="library/artists" />}
+					{isAuthorized && <LibrarySongs path="library/songs" />}
+					{isAuthorized && <LibraryAlbum path="library/album/:id" />}
+					{isAuthorized && <LibraryPlaylist path="library/playlist/:id" />}
+					<NotFound default />
+				</Router>
+			</main>
+		</div>
+	);
 }
 
 function useAuthorization() {
-  const [isAuthorized, setIsAuthorized] = useState(user.isAuthorized);
-  useEffect(() => {
-    const handleChange = () => {
-      setIsAuthorized(user.isAuthorized);
-    }
+	const [isAuthorized, setIsAuthorized] = useState(user.isAuthorized);
+	useEffect(() => {
+		const handleChange = () => {
+			setIsAuthorized(user.isAuthorized);
+		};
 
-    music.instance.addEventListener('authorizationStatusDidChange', handleChange);
-    return () => {
-      music.instance.removeEventListener('authorizationStatusDidChange', handleChange);
-    }
-  });
+		music.instance.addEventListener(
+			'authorizationStatusDidChange',
+			handleChange
+		);
+		return () => {
+			music.instance.removeEventListener(
+				'authorizationStatusDidChange',
+				handleChange
+			);
+		};
+	});
 
-  return isAuthorized;
+	return isAuthorized;
 }
 
 export default App;
