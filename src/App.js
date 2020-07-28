@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Router } from '@reach/router';
 import { music, user } from './services/music';
 import Nav from './components/Nav';
@@ -19,42 +19,38 @@ import NotFound from './components/NotFound/NotFound';
 import styles from './App.module.css';
 
 function App() {
-	const isAuthorized = useAuthorization();
+	var isAuthorized = useAuthorization();
 
 	return (
 		<div className={styles.app}>
 			<div className={styles.sidebar}>
-				<Nav isAuthorized={isAuthorized} />
-				{!isAuthorized && (
-					<p className={styles.prompt}>
-						Log in to Apple Music <br />
-						to access your library and listen to full-length songs.
-					</p>
-				)}
+				{isAuthorized && <Nav isAuthorized={isAuthorized} />}
 			</div>
 			<Player isAuthorized={isAuthorized} />
 			<main className={styles.main}>
 				<Router>
 					{isAuthorized ? (
-						<React.Fragment>
+						<Fragment>
 							<ForYou path="/" />
 							<Browse path="browse" />
-						</React.Fragment>
+						</Fragment>
 					) : (
-						<React.Fragment>
-							<Browse path="/" />
-						</React.Fragment>
+						<Browse path="/" />
 					)}
 					<Search path="search/:query" />
 					<Album path="album/:id" />
 					<Artist path="artist/:id" />
 					<Playlist path="playlist/:id" />
-					{isAuthorized && <RecentlyAdded path="library/recent" />}
-					{isAuthorized && <LibraryAlbums path="library/albums" />}
-					{isAuthorized && <LibraryArtists path="library/artists" />}
-					{isAuthorized && <LibrarySongs path="library/songs" />}
-					{isAuthorized && <LibraryAlbum path="library/album/:id" />}
-					{isAuthorized && <LibraryPlaylist path="library/playlist/:id" />}
+					{isAuthorized && (
+						<Fragment>
+							<RecentlyAdded path="library/recent" />
+							<LibraryAlbums path="library/albums" />
+							<LibraryArtists path="library/artists" />
+							<LibrarySongs path="library/songs" />
+							<LibraryAlbum path="library/album/:id" />
+							<LibraryPlaylist path="library/playlist/:id" />
+						</Fragment>
+					)}
 					<NotFound default />
 				</Router>
 			</main>
