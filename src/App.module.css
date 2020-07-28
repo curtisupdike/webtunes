@@ -1,9 +1,9 @@
 .app {
 	display: grid;
 	grid-template-areas:
-		'player player'
+		'sidebar player'
 		'sidebar main';
-	grid-template-columns: 200px;
+	grid-template-columns: auto 1fr;
 	grid-template-rows: 60px auto;
 	height: 100vh;
 	width: 100vw;
@@ -13,7 +13,7 @@
 	border-right: 1px solid var(--border-color);
 	display: flex;
 	flex-direction: column;
-	background: #f0f0f0;
+	background: var(--color-background-sidebar);
 	grid-area: sidebar;
 	font-weight: 500;
 }

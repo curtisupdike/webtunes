@@ -16,7 +16,6 @@ function Player({ isAuthorized }) {
 			<NowPlaying />
 			<Controls />
 			<header className={styles.header}>
-				<h1 className={styles.title}>webTunes</h1>
 				<LoginButton isAuthorized={isAuthorized} />
 			</header>
 		</div>

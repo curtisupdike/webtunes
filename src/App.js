@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Router, Redirect } from '@reach/router';
+import { Router } from '@reach/router';
 import { music, user } from './services/music';
-import SearchBar from './components/SearchBar/SearchBar';
-import Navigation from './components/Navigation/Navigation';
+import Nav from './components/Nav';
 import Player from './components/Player/Player';
 import ForYou from './routes/ForYou/ForYou';
 import Browse from './routes/Browse/Browse';
@@ -25,8 +24,7 @@ function App() {
 	return (
 		<div className={styles.app}>
 			<div className={styles.sidebar}>
-				<SearchBar />
-				<Navigation isAuthorized={isAuthorized} />
+				<Nav isAuthorized={isAuthorized} />
 				{!isAuthorized && (
 					<p className={styles.prompt}>
 						Log in to Apple Music <br />
@@ -38,16 +36,19 @@ function App() {
 			<main className={styles.main}>
 				<Router>
 					{isAuthorized ? (
-						<Redirect noThrow from="/" to="foryou" />
+						<React.Fragment>
+							<ForYou path="/" />
+							<Browse path="browse" />
+						</React.Fragment>
 					) : (
-						<Redirect noThrow from="/" to="browse" />
+						<React.Fragment>
+							<Browse path="/" />
+						</React.Fragment>
 					)}
-					<Browse path="browse" />
 					<Search path="search/:query" />
 					<Album path="album/:id" />
 					<Artist path="artist/:id" />
 					<Playlist path="playlist/:id" />
-					{isAuthorized && <ForYou path="foryou" />}
 					{isAuthorized && <RecentlyAdded path="library/recent" />}
 					{isAuthorized && <LibraryAlbums path="library/albums" />}
 					{isAuthorized && <LibraryArtists path="library/artists" />}
