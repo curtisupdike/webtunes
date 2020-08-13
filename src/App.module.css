@@ -10,7 +10,6 @@
 }
 
 .sidebar {
-	border-right: 1px solid var(--border-color);
 	display: flex;
 	flex-direction: column;
 	background: var(--color-background-sidebar);
@@ -18,31 +17,10 @@
 	font-weight: 500;
 }
 
-.prompt {
-	border: 2px solid var(--border-color);
-	border-radius: 3px;
-	color: var(--light-font-color);
-	font-size: 13px;
-	margin: 10px 8px;
-	padding: 6px 8px;
-	text-align: center;
-}
-
-.info {
-	align-items: center;
-	border-top: 1px solid var(--border-color);
-	display: flex;
-	text-align: center;
-	color: var(--dark-font-color);
-	font-size: 13px;
-	height: 48px;
-	margin: 0;
-	padding: 0 12px;
-}
-
 .main {
-	box-sizing: border-box;
+	background-color: var(--color-background-main);
 	grid-area: main;
+	padding: 30px;
 	max-height: 100%;
 	overflow: scroll;
 }

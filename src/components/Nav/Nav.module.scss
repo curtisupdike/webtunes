@@ -1,6 +1,6 @@
 .nav {
 	background-color: var(--color-background-sidebar);
-	border: 1px solid var(--color-background-sidebar);
+	border-right: 1px solid var(--color-border-sidebar);
 	min-height: min-content;
 	width: 232px;
 	grid-area: nav;
@@ -28,7 +28,7 @@
 }
 
 @mixin link {
-	color: var(--color-font-main);
+	color: var(--color-font-base);
 	text-decoration: none;
 	padding-left: 1.25rem;
 	&:hover {
