@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { music } from '../../services/music';
 import styles from './ForYou.module.css';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import Loading from '../../components/common/Loading';
 import MediaCollection from '../../components/MediaCollection/MediaCollection';
 
 function ForYou() {
@@ -26,7 +26,7 @@ function ForYou() {
 			))}
 		</>
 	) : (
-		<LoadingSpinner />
+		<Loading />
 	);
 }
 
