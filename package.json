@@ -1,6 +1,6 @@
 {
-	"name": "web-tunes",
-	"version": "0.1.0",
+	"name": "webtunes",
+	"version": "1.0",
 	"private": true,
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.30",
