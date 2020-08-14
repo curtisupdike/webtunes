@@ -3,8 +3,8 @@ import { Link } from '@reach/router';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import styles from './Nav.module.scss';
 
-var Nav = () => (
-	<nav className={styles.nav}>
+var Nav = ({ isAuthorized }) => (
+	<nav className={styles.nav} style={isAuthorized ? {} : { width: 0 }}>
 		<Link to="/" className={styles['logo-link']}>
 			<Icon icon="record-vinyl" />
 			<span>Webtunes</span>
@@ -23,7 +23,7 @@ var Nav = () => (
 			<NavLink to="/library/albums">Albums</NavLink>
 			<NavLink to="/library/artists">Artists</NavLink>
 
-			<NavPlaylists />
+			{isAuthorized && <NavPlaylists />}
 		</div>
 	</nav>
 );

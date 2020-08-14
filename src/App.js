@@ -23,9 +23,7 @@ function App() {
 
 	return (
 		<div className={styles.app}>
-			<div className={styles.sidebar}>
-				{isAuthorized && <Nav isAuthorized={isAuthorized} />}
-			</div>
+			<Nav isAuthorized={isAuthorized} />
 			<Player isAuthorized={isAuthorized} />
 			<main className={styles.main}>
 				<Router>
