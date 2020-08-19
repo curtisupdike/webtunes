@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import styles from './Nav.module.scss';
 
-var Nav = ({ isAuthorized }) => (
+let Nav = ({ isAuthorized }) => (
 	<nav className={styles.nav} style={isAuthorized ? {} : { width: 0 }}>
 		<Link to="/" className={styles['logo-link']}>
 			<Icon icon="record-vinyl" />
@@ -28,14 +28,14 @@ var Nav = ({ isAuthorized }) => (
 	</nav>
 );
 
-var NavLink = ({ children, ...props }) => (
+let NavLink = ({ children, ...props }) => (
 	<Link className={styles['nav-link']} {...props}>
 		<div>{children}</div>
 	</Link>
 );
 
 function NavPlaylists() {
-	var playlists = usePlaylists();
+	let playlists = usePlaylists();
 
 	return (
 		playlists && (
@@ -52,10 +52,10 @@ function NavPlaylists() {
 }
 
 function usePlaylists() {
-	var [playlists, setPlaylists] = useState(null);
+	let [playlists, setPlaylists] = useState(null);
 
 	useEffect(() => {
-		var music = window.MusicKit.getInstance();
+		let music = window.MusicKit.getInstance();
 		if (music.isAuthorized) {
 			music.api.library.playlists().then(setPlaylists);
 		} else {

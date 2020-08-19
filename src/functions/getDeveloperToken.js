@@ -1,4 +1,4 @@
-var jsonWebToken = require('jsonwebtoken');
+let jsonWebToken = require('jsonwebtoken');
 
 function parseKey(keyFromEnv) {
 	const head = '-----BEGIN PRIVATE KEY-----';

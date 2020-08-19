@@ -1,4 +1,4 @@
-var MK = (function () {
+let MK = (function () {
 	return {
 		get instance() {
 			if (!window.music) {
@@ -8,15 +8,15 @@ var MK = (function () {
 		},
 
 		homeRecommendations() {
-			var recentlyPlayed = this.instance.api.recentPlayed().then((content) => ({
+			let recentlyPlayed = this.instance.api.recentPlayed().then((content) => ({
 				id: 'recentlyPlayed',
 				title: 'Recently Played',
 				content,
 			}));
-			var recommendations = this.instance.api
+			let recommendations = this.instance.api
 				.recommendations()
 				.then(formatApiResponse);
-			var flatten = (arr) => [].concat(...arr);
+			let flatten = (arr) => [].concat(...arr);
 			return Promise.all([recentlyPlayed, recommendations]).then(flatten);
 		},
 	};

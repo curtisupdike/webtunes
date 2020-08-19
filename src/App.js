@@ -19,7 +19,7 @@ import NotFound from './components/NotFound/NotFound';
 import styles from './App.module.css';
 
 function App() {
-	var isAuthorized = useAuthorization();
+	let isAuthorized = useAuthorization();
 
 	return (
 		<div className={styles.app}>

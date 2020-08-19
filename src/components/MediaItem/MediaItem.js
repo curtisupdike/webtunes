@@ -5,8 +5,8 @@ import styles from './MediaItem.module.scss';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 function MediaCollectionItem({ attributes, size }) {
-	var music = window.MusicKit.getInstance();
-	var { artwork, name, playParams } = attributes;
+	let music = window.MusicKit.getInstance();
+	let { artwork, name, playParams } = attributes;
 	playParams = { [playParams.kind]: playParams.id };
 
 	function play() {

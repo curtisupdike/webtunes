@@ -4,8 +4,8 @@ import styles from './MediaContainer.module.css';
 import MediaCollection from '../MediaCollection';
 
 function MediaContainer({ title, media }) {
-	var containerRef = useRef(null);
-	var componentWidth = useComponentWidth(containerRef);
+	let containerRef = useRef(null);
+	let componentWidth = useComponentWidth(containerRef);
 
 	return (
 		<div ref={containerRef}>

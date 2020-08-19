@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function useComponentWidth(componentRef) {
-	var [width, setWidth] = useState(null);
+	let [width, setWidth] = useState(null);
 	useEffect(() => {
 		window.addEventListener('resize', updateWidth);
 		if (componentRef.current) {

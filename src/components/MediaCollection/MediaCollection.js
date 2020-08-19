@@ -16,11 +16,11 @@ function MediaCollection({ data, ...props }) {
 }
 
 function NewMediaCollection({ title, content, width: containerWidth, data }) {
-	var [position, setPosition] = useState(0);
-	var itemsTotal = content.length;
-	var itemsInView = Math.floor(containerWidth / MAX) + 1;
-	var itemWidth = (containerWidth - GAP * (itemsInView - 1)) / itemsInView;
-	var offset = (itemWidth + GAP) * position;
+	let [position, setPosition] = useState(0);
+	let itemsTotal = content.length;
+	let itemsInView = Math.floor(containerWidth / MAX) + 1;
+	let itemWidth = (containerWidth - GAP * (itemsInView - 1)) / itemsInView;
+	let offset = (itemWidth + GAP) * position;
 
 	useEffect(controlPosition, [itemsInView, itemsTotal, position]);
 
@@ -71,7 +71,7 @@ function NewMediaCollection({ title, content, width: containerWidth, data }) {
 	}
 
 	function previousPosition(currentPosition) {
-		var newPosition = currentPosition - itemsInView;
+		let newPosition = currentPosition - itemsInView;
 		if (newPosition < 0) {
 			return 0;
 		}
@@ -79,7 +79,7 @@ function NewMediaCollection({ title, content, width: containerWidth, data }) {
 	}
 
 	function nextPosition(currentPosition) {
-		var newPosition = currentPosition + itemsInView;
+		let newPosition = currentPosition + itemsInView;
 		if (newPosition >= itemsTotal) {
 			return itemsTotal - 1;
 		}
