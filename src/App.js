@@ -4,7 +4,7 @@ import { music, user } from './services/music';
 import Nav from './components/Nav';
 import Player from './components/Player/Player';
 import Home from './pages/Home';
-import Browse from './routes/Browse/Browse';
+import Browse from './pages/Browse';
 import RecentlyAdded from './routes/RecentlyAdded/RecentlyAdded';
 import LibraryAlbums from './routes/LibararyAlbums/LibraryAlbums';
 import LibraryArtists from './routes/LibraryArtists/LibraryArtists';

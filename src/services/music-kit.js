@@ -13,27 +13,44 @@ let MK = (function () {
 				title: 'Recently Played',
 				content,
 			}));
+
 			let recommendations = this.instance.api
 				.recommendations()
-				.then(formatApiResponse);
+				.then((response) =>
+					response.map(
+						({
+							id,
+							attributes: {
+								title: { stringForDisplay: title },
+							},
+							relationships: {
+								contents: { data: content },
+							},
+						}) => ({ id, title, content })
+					)
+				);
+
 			let flatten = (arr) => [].concat(...arr);
 			return Promise.all([recentlyPlayed, recommendations]).then(flatten);
 		},
-	};
 
-	function formatApiResponse(response) {
-		return response.map(
-			({
-				id,
-				attributes: {
-					title: { stringForDisplay: title },
-				},
-				relationships: {
-					contents: { data: content },
-				},
-			}) => ({ id, title, content })
-		);
-	}
+		browseRecommendations() {
+			return this.instance.api
+				.charts(['songs', 'albums', 'playlists'], { limit: 24 })
+				.then(({ songs, albums, playlists }) => [
+					...albums,
+					...playlists,
+					...songs,
+				])
+				.then((charts) =>
+					charts.map(({ name: title, data: content }) => ({
+						id: title,
+						title,
+						content,
+					}))
+				);
+		},
+	};
 })();
 
 export default MK;
