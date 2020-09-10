@@ -75,10 +75,8 @@
 	margin: 1.5rem 1rem;
 	text-decoration: none;
 	flex-direction: row;
-	& div {
-		align-items: center;
-		display: flex;
-	}
+	align-items: center;
+	display: flex;
 	& svg {
 		height: 1.125em;
 		margin-right: 0.125em;
