@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { button } from './LoginButton.module.css';
-import { user } from '../../services/music';
+import { user } from '../../../services/music';
 
 function LoginButton({ isAuthorized }) {
 	return isAuthorized ? (

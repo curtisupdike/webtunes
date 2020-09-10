@@ -53,15 +53,6 @@
 	justify-content: center;
 }
 
-.header {
-	align-items: center;
-	display: flex;
-	color: var(--base-font-color);
-	grid-area: header;
-	justify-content: flex-end;
-	padding: 0 16px;
-}
-
 .title {
 	font-size: 24px;
 	margin: 0;

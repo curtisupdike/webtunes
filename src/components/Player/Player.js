@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './Player.module.css';
 import { music, player } from '../../services/music';
 import Artwork from '../Artwork/Artwork';
-import LoginButton from '../LoginButton/LoginButton';
 import {
 	PreviousButton,
 	PauseButton,
@@ -10,14 +9,11 @@ import {
 	NextButton,
 } from './Buttons/Buttons';
 
-function Player({ isAuthorized }) {
+function Player() {
 	return (
 		<div className={styles.player}>
 			<NowPlaying />
 			<Controls />
-			<header className={styles.header}>
-				<LoginButton isAuthorized={isAuthorized} />
-			</header>
 		</div>
 	);
 }

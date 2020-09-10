@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Router } from '@reach/router';
 import { music, user } from './services/music';
+import Header from './components/Header';
 import Nav from './components/Nav';
 import Player from './components/Player/Player';
 import Home from './pages/Home';
@@ -23,6 +24,7 @@ function App() {
 
 	return (
 		<div className={styles.app}>
+			<Header isAuthorized={isAuthorized} />
 			<Nav isAuthorized={isAuthorized} />
 			<Player isAuthorized={isAuthorized} />
 			<main className={styles.main}>
