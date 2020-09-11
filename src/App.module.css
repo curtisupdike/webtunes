@@ -5,7 +5,7 @@
 		'sidebar main'
 		'player player';
 	grid-template-columns: auto 1fr;
-	grid-template-rows: 60px auto 1fr;
+	grid-template-rows: 60px auto 91px;
 	height: 100vh;
 	width: 100vw;
 }

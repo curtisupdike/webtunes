@@ -7,6 +7,18 @@ let MK = (function () {
 			return window.music;
 		},
 
+		get player() {
+			return this.instance.player;
+		},
+
+		get volume() {
+			return this.player.volume;
+		},
+
+		set volume(newVolume) {
+			this.player.volume = newVolume;
+		},
+
 		homeRecommendations() {
 			let recentlyPlayed = this.instance.api.recentPlayed().then((content) => ({
 				id: 'recentlyPlayed',

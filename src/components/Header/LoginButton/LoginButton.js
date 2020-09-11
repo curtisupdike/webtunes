@@ -6,11 +6,11 @@ import { user } from '../../../services/music';
 function LoginButton({ isAuthorized }) {
 	return isAuthorized ? (
 		<button className={button} onClick={user.logout}>
-			Logout
+			Sign Out
 		</button>
 	) : (
 		<button className={button} onClick={user.login}>
-			Login
+			Sign In
 		</button>
 	);
 }
