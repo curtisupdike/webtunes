@@ -1,4 +1,4 @@
-var jsonWebToken = require('jsonwebtoken');
+let jsonWebToken = require('jsonwebtoken');
 
 function parseKey(keyFromEnv) {
 	const head = '-----BEGIN PRIVATE KEY-----';
@@ -12,21 +12,21 @@ function parseKey(keyFromEnv) {
 
 exports.handler = async () => {
 	let developerToken = jsonWebToken.sign(
-		{}, 
-		parseKey(process.env.APPLE_DEV_AUTH_KEY), 
+		{},
+		parseKey(process.env.APPLE_DEV_AUTH_KEY),
 		{
-			algorithm: "ES256",
-			expiresIn: "180d",
+			algorithm: 'ES256',
+			expiresIn: '180d',
 			issuer: process.env.APPLE_DEV_TEAM_ID,
 			header: {
-				alg: "ES256",
-				kid: process.env.APPLE_DEV_KEY_ID
-			}
+				alg: 'ES256',
+				kid: process.env.APPLE_DEV_KEY_ID,
+			},
 		}
 	);
-	
+
 	return {
 		statusCode: 200,
-		body: JSON.stringify({developerToken})
+		body: JSON.stringify({ developerToken }),
 	};
 };

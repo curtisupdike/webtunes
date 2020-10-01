@@ -1,18 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { AuthorizeContext } from '../../providers/AuthorizeProvider';
 import { button } from './LoginButton.module.css';
-import { user } from '../../services/music';
 
-function LoginButton({ isAuthorized }) {
-  return isAuthorized ? (
-    <button className={button} onClick={user.logout}>Logout</button>
-  ) : (
-    <button className={button} onClick={user.login}>Login</button>
-  );
-}
+function LoginButton() {
+	let [isAuthorized, toggleIsAuthorized] = useContext(AuthorizeContext);
 
-LoginButton.propTypes = {
-  isAuthorized: PropTypes.bool.isRequired
+	return isAuthorized ? (
+		<button className={button} onClick={toggleIsAuthorized}>
+			Sign Out
+		</button>
+	) : (
+		<button className={button} onClick={toggleIsAuthorized}>
+			Sign In
+		</button>
+	);
 }
 
 export default LoginButton;
