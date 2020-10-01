@@ -1,44 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { music, user } from './services/music';
-import Header from './components/Header';
+import React from 'react';
+import AuthorizeProvider from './providers/AuthorizeProvider';
+import LoginButton from './components/LoginButton';
 import Nav from './components/Nav';
-import Main from './components/Main';
+import Routes from './pages/Routes';
 import Player from './components/Player';
 import styles from './App.module.css';
 
 function App() {
-	let isAuthorized = useAuthorization();
-
 	return (
-		<div className={styles.app}>
-			<Header isAuthorized={isAuthorized} />
-			<Nav isAuthorized={isAuthorized} />
-			<Player isAuthorized={isAuthorized} />
-			<Main isAuthorized={isAuthorized} />
-		</div>
+		<AuthorizeProvider>
+			<div className={styles.app}>
+				<header className={styles.header}>
+					<LoginButton />
+				</header>
+				<Nav />
+				<Player />
+				<main className={styles.main}>
+					<Routes />
+				</main>
+			</div>
+		</AuthorizeProvider>
 	);
-}
-
-function useAuthorization() {
-	const [isAuthorized, setIsAuthorized] = useState(user.isAuthorized);
-	useEffect(() => {
-		const handleChange = () => {
-			setIsAuthorized(user.isAuthorized);
-		};
-
-		music.instance.addEventListener(
-			'authorizationStatusDidChange',
-			handleChange
-		);
-		return () => {
-			music.instance.removeEventListener(
-				'authorizationStatusDidChange',
-				handleChange
-			);
-		};
-	});
-
-	return isAuthorized;
 }
 
 export default App;

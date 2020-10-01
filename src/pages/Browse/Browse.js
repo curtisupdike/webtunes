@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import MK from '../services/music-kit';
-import MediaContainer from '../components/MediaContainer';
-import Loading from '../components/common/Loading';
+import MK from '../../services/music-kit';
+import MediaContainer from '../../components/MediaContainer';
+import Loading from '../../components/common/Loading';
 
 function Browse() {
 	const [recommendations, setRecomendations] = useState(null);

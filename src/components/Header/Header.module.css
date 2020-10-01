@@ -1,9 +1,0 @@
-.header {
-	align-items: center;
-	grid-area: header;
-	display: flex;
-	grid-area: header;
-	justify-content: flex-end;
-	padding: 0 1em;
-	background-color: var(--color-background-main);
-}
