@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from '@reach/router';
 import formatArtworkURL from '../../../utils/formatArtworkURL';
 import MK from '../../../services/music-kit';
 import styles from './NowPlaying.module.scss';
@@ -18,8 +19,8 @@ function NowPlaying() {
 					/>
 				</div>
 				<div className={styles.info}>
-					<div className={styles.title}>{mediaItem.title}</div>
-					<div className={styles.artist}>{mediaItem.artistName}</div>
+					<Link to={mediaItem.containerURL} className={styles.title}>{mediaItem.title}</Link>
+					<p className={styles.artist}>{mediaItem.artistName}</p>
 				</div>
 			</div>
 		)
@@ -32,9 +33,18 @@ function useNowPlayingItem() {
 	useEffect(function () {
 		function handleChange(event) {
 			var {
-				item: { title, artwork, albumName, artistName },
+				item: {
+					title,
+					artwork,
+					albumName,
+					artistName,
+					container: {
+						name,
+						id
+					}
+				}
 			} = event;
-			setMediaItem({ title, artwork, albumName, artistName });
+			setMediaItem({ title, artwork, albumName, artistName, containerURL: `${name}/${id}` });
 		}
 		MK.player.addEventListener('mediaItemDidChange', handleChange);
 		return function cleanup() {

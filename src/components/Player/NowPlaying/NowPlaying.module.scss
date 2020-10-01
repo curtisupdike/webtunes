@@ -24,8 +24,10 @@
 
 @mixin text {
 	@include ellipses-one-line;
+	display: block;
 	letter-spacing: 0.015em;
 	text-align: left;
+	text-decoration: none;
 }
 
 .title {
@@ -33,10 +35,19 @@
 	font-size: 14px;
 	line-height: 20px;
 	color: var(--color-font-accent);
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .artist {
 	@include text;
 	font-size: 12px;
 	line-height: 16px;
+	color: var(--color-font-main);
+	padding: 0;
+	margin: 0;
+	&:hover {
+		cursor: default;
+	}
 }
