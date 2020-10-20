@@ -14,17 +14,20 @@ import Album from '../routes/Album/Album';
 import Artist from '../routes/Artist/Artist';
 import Playlist from '../routes/Playlist/Playlist';
 import NotFound from '../components/NotFound/NotFound';
-import { AuthorizeContext } from '../providers/AuthorizeProvider';
 
-function Main() {
-	let [isAuthorized] = useContext(AuthorizeContext);
-
+function Main({ isAuthorized }) {
 	return (
 		<Router>
 			{isAuthorized ? (
 				<Fragment>
 					<Home path="/" />
 					<Browse path="browse" />
+					<RecentlyAdded path="library/recent" />
+					<LibraryAlbums path="library/albums" />
+					<LibraryArtists path="library/artists" />
+					<LibrarySongs path="library/songs" />
+					<LibraryAlbum path="library/album/:id" />
+					<LibraryPlaylist path="library/playlist/:id" />
 				</Fragment>
 			) : (
 					<Browse path="/" />
@@ -33,16 +36,6 @@ function Main() {
 			<Album path="album/:id" />
 			<Artist path="artist/:id" />
 			<Playlist path="playlist/:id" />
-			{isAuthorized && (
-				<Fragment>
-					<RecentlyAdded path="library/recent" />
-					<LibraryAlbums path="library/albums" />
-					<LibraryArtists path="library/artists" />
-					<LibrarySongs path="library/songs" />
-					<LibraryAlbum path="library/album/:id" />
-					<LibraryPlaylist path="library/playlist/:id" />
-				</Fragment>
-			)}
 			<NotFound default />
 		</Router>
 	);

@@ -1,11 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { AuthorizeContext } from '../../providers/AuthorizeProvider';
 import styles from './Nav.module.scss';
 
-function Nav() {
-	let [isAuthorized] = useContext(AuthorizeContext);
+function Nav({ isAuthorized }) {
 	let [userPlaylists, setUserPlaylists] = useState(null);
 
 	useEffect(
