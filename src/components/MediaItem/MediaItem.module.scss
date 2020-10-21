@@ -2,7 +2,7 @@
 	position: relative;
 
 	& div {
-		background-color: rgba(0, 0, 0, 0.3);
+		background-color: rgba(0, 0, 0, 0.6);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -23,7 +23,7 @@
 
 	& button {
 		color: #fff;
-		transition: transform 0.1s;
+		transition: transform 0.2s;
 	}
 
 	& button:hover {

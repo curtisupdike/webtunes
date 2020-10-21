@@ -14,8 +14,11 @@ import {
 	faSpinner,
 	faChevronLeft,
 	faChevronRight,
-	faPlayCircle,
 } from '@fortawesome/free-solid-svg-icons';
+
+import {
+	faPlayCircle
+} from '@fortawesome/free-regular-svg-icons';
 
 library.add(
 	faPlay,

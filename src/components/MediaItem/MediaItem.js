@@ -21,7 +21,7 @@ function MediaCollectionItem({ attributes, size }) {
 			<img src={formatArtworkURL(artwork, size)} alt={`Artwork for ${name}`} />
 			<div>
 				<button onClick={play}>
-					<Icon icon="play-circle" size="3x" />
+					<Icon icon={['far', 'play-circle']} size="3x" />
 				</button>
 			</div>
 		</div>
