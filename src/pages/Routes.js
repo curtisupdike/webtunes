@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import { Router } from '@reach/router';
 import Home from './Home';
 import Browse from './Browse';
@@ -6,7 +6,7 @@ import Browse from './Browse';
 import RecentlyAdded from '../routes/RecentlyAdded/RecentlyAdded';
 import LibraryAlbums from '../routes/LibararyAlbums/LibraryAlbums';
 import LibraryArtists from '../routes/LibraryArtists/LibraryArtists';
-import LibrarySongs from '../routes/LibrarySongs/LibrarySongs';
+import LibrarySongs from './LibrarySongs';
 import LibraryAlbum from '../routes/LibraryAlbum/LibraryAlbum';
 import LibraryPlaylist from '../routes/LibraryPlaylist/LibraryPlaylist';
 import Search from '../routes/Search/Search';

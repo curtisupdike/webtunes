@@ -21,6 +21,7 @@
 }
 
 .main {
+	cursor: default;
 	background-color: var(--color-background-main);
 	grid-area: main;
 	padding: 30px;
