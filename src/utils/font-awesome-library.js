@@ -17,7 +17,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
-	faPlayCircle
+	faPlayCircle,
+	faClock
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -35,5 +36,6 @@ library.add(
 	faSpinner,
 	faChevronLeft,
 	faChevronRight,
-	faPlayCircle
+	faPlayCircle,
+	faClock
 );
