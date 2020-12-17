@@ -4,7 +4,7 @@ import styles from './MediaItem.module.scss';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
-function MediaCollectionItem({ attributes, size }) {
+function MediaItem({ attributes, size }) {
 	let music = window.MusicKit.getInstance();
 	let {
 		artwork,
@@ -35,4 +35,4 @@ function MediaCollectionItem({ attributes, size }) {
 	);
 }
 
-export default MediaCollectionItem;
+export default MediaItem;
